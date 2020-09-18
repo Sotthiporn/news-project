@@ -1,0 +1,201 @@
+body{
+  font-family: 'Khmer OS System', cursive;
+}
+a{
+  text-decoration: none !important;
+  color: white !important;
+}
+.top-width{
+  background-color: black;
+  width: 100%;
+  float: left;
+  padding: 10px;
+}
+.top-logo-width{
+  width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+.logo{
+  width: 200px;
+  float: left;
+}
+.logo img{
+  height: 70px;
+}
+.top-ads{
+  width: 1000;
+}
+.top-ads img{
+  float: right;
+  height: 70px;
+}
+.navbar{
+  margin-bottom: 2px;
+}
+.top-menu ul li a{
+  color: white !important;
+    font-family: 'Koulen', cursive;
+ }
+.top-menu ul li:hover a{
+ color: black !important;
+}
+.animation-menu::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: 0.5s;
+}
+.animation-menu:hover::after{
+  width: 100%;
+  transition: 0.5s;
+}
+.container-news{
+  width: 1200px;
+  margin: auto;
+  overflow: hidden;
+}
+.slide-box{
+  width: 840px;
+  height: 510px;
+  float: left;
+}
+.slide-box-1{
+  width: 430px;
+  height: 255px;
+  float: left;
+  position: relative;
+  cursor: pointer;
+}
+.slide-box-1 img{
+  width: 100%;
+  height: 100%;
+}
+.slide-box-2{
+  width: 410px;
+  height: 255px;
+  float: left;
+  position: relative;
+  cursor: pointer;
+}
+.slide-box-2 img{
+  width: 100%;
+  height: 100%;
+}
+.slide-ads{
+  width: 350px;
+  height: 450px;
+  float: left;
+  margin-left: 10px;
+}
+.slide-box-ads{
+  width: 350px;
+  height: 250px;
+  float: left;
+  margin-bottom: 10px;
+  cursor: pointer;
+
+}
+.slide-box-ads img{
+  width: 350px;
+  height: 250px;
+  margin-bottom: 10px;
+}
+.slide-box-ads iframe{
+  width: 350px;
+  height: 250px;
+}
+.text-cate-slide4{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #F9A62B;
+  color: white;
+  padding: 5px;
+  width: 112px;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, 75% 0);
+
+}
+.text-cate-slide3{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color:#38C378;
+  color: white;
+  padding: 5px;
+  width: 112px;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, 75% 0);
+
+}
+.text-cate-slide2{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: dodgerblue;
+  color: white;
+  padding: 5px;
+  width: 112px;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, 75% 0);
+
+}
+.text-cate-slide1{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: lightcoral;
+  color: white;
+  padding: 5px;
+  width: 112px;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, 75% 0);
+
+}
+.title-slide{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+}
+.home-ct-title{
+  margin-top: 32px;
+  padding-top:10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 12px;
+    
+}
+.box-item{
+  height: 320px;
+  transition: .6s;
+}
+.box-item .img-box{
+  width:100%;
+  height: 80%;
+  float:left;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.box-item:hover{
+  transform: translate(0,-10px);
+}
+
+.box-item .txt-box{
+  height: 20%;
+  float: left;
+}
+.box-item .txt-box h1{
+  margin-top: 10px;
+  font-size: 16px;
+}

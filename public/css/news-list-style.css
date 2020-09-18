@@ -1,0 +1,72 @@
+.news-list-box{
+    box-shadow: 1px 1px 3px 0px grey;
+}
+.news-list-box .box{
+    height: 145px;
+    margin: 10px 0;
+}
+.news-list-box .box .img-box{
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+.news-list-box .box .img-box img{
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+.news-list-box .box .txt-box{
+    width: 68%;
+    height: 100%;
+    float: left;
+    margin-left: 2%;
+}
+.news-list-box .box .txt-box a{
+    color: black !important;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.news-list-box .box .txt-box a:hover{
+    color: cadetblue !important;
+}
+.news-list-box .box .txt-box p{
+    font-size: 13px;
+    color: #222222;
+    margin-top: 5px !important;
+}
+
+
+.ads-box .ads-box-news{
+    height: 50px;
+    float: left;
+    margin-bottom: 20px;
+}
+.ads-box .ads-box-news .img-box{
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+.ads-box .ads-box-news .img-box img{
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+.ads-box .ads-box-news .txt-box{
+    width: 69%;
+    height: 100%;
+    float: left;
+    margin-left: 1%;
+}
+.ads-box .ads-box-news .txt-box a{
+    display: block;
+    color: black !important;
+    font-size: 12px;
+    text-decoration: none;
+}
+.ads-box .ads-box-news .txt-box a:hover{
+    color: cadetblue !important;
+}
+.btn-more{
+    margin: 10px 10px 10px 10px;
+}

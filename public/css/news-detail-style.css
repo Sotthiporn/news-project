@@ -1,0 +1,70 @@
+.news-detail-box{
+    box-shadow: 1px 1px 3px 0px grey;
+    height: auto;
+}
+.news-detail-box .box{
+    margin: 10px 0;
+}
+.news-detail-box p img{
+    width: 100%;
+    height: 100%;
+}
+.news-detail-box div picture img{
+    width: 100%;
+    height: 100%;
+}
+
+.news-detail-box .box .txt-box{
+    width: 100%;
+    height: 100%;
+    float: left;
+    margin-top: 20px;
+}
+.news-detail-box .box .txt-box h2{
+    color: black !important;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.news-detail-box .box .txt-box p{
+    font-size: 15px;
+    color: #222222;
+}
+
+
+.ads-detail-box .ads-box{
+    height: auto;
+    float: left;
+    margin-bottom: 20px;
+}
+.ads-detail-box .ads-box .img-box{
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+.ads-detail-box .ads-box .img-box img{
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+.ads-detail-box .ads-box .img-box iframe{
+    width: 100%;
+    height: 290px;
+    float: right;
+    margin-left:15px;
+}
+.ads-detail-box .ads-box-news .txt-box{
+    width: 69%;
+    height: 100%;
+    float: left;
+    margin-left: 1%;
+}
+.ads-detail-box .ads-box-news .txt-box a{
+    display: block;
+    color: black !important;
+    font-size: 12px;
+    text-decoration: none;
+}
+.ads-detail-box .ads-box-news .txt-box a:hover{
+    color: cadetblue !important;
+}
