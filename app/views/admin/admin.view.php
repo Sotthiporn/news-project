@@ -23,7 +23,7 @@
                 <td><?= $val->id ?></td>
                 <td><?= $val->name ?></td>
                 <td><?= $val->od ?></td>
-                <td><?= $val->status ?></td>
+                <td><?= $val->status == 1 ? 'Enabled' : ($val->status == 2 ? 'Disabled' : '') ?></td>
                 <td>
                 <a href="admin/edit-cate?id=<?= $val->id ?>" class="btn btn-success text-white">Edit</a>
                 <a class="btn btn-danger text-white btn-delete-cate" ref="<?= $val->id ?>">Delete</a>

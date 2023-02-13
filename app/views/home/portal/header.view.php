@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta property="og:url"           content="https://www.your-domain.com/your-page.html" />
     <meta property="og:type"          content="website" />
@@ -42,7 +42,7 @@
   </div>
 
 <!-- category   -->
-<nav class="navbar navbar-expand-lg navbar-light bg-info text-white">
+<nav class="navbar navbar-expand-lg navbar-light text-white" style="background-color: #3445b4;">
   <a class="navbar-brand text-white" href="/">RUPP-News 24h</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -61,10 +61,9 @@
       </li>
       <?php
       $cate = $class->category();
-
       foreach ($cate as $key => $val) {
           $category_color = "white"; 
-          if($val->id == $_GET['cate']){
+          if(isset($_GET['cate']) && $val->id == $_GET['cate']){
             $category_color = "black"; 
           }
         ?>
@@ -77,7 +76,7 @@
     </ul>
     <form action="/search-news" method="get"  class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="ស្វែងរក" aria-label="Search" name="search">
-      <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" name="btnSearch">ស្វែងរក</button>
+      <button class="btn btn-dark text-white my-2 my-sm-0" type="submit" name="btnSearch">ស្វែងរក</button>
     </form>
   </div>
 </nav>

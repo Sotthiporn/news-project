@@ -16,8 +16,7 @@
         function getAll_tbl_limit($tbl,$con,$order,$limit){
             $query = $this->pdo->prepare("select * from $tbl WHERE $con ORDER BY $order LIMIT $limit");
             $query->execute();
-    
-            // return $query->fetchAll(PDO::FETCH_NUM);
+
             return $query->fetchAll(PDO::FETCH_OBJ);
             
         }
@@ -26,8 +25,6 @@
             $query->execute();
     
             return $query->fetchAll(PDO::FETCH_NUM);
-            // return $query->fetchAll(PDO::FETCH_OBJ);
-            
         }
     }
 

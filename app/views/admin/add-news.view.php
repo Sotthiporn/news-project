@@ -1,6 +1,7 @@
 <?php 
     require 'portal/header.admin.view.php';  
-    $cate = $class->get_cate_on_form();
+    $categoryController = new CategoryController();
+    $cate = $categoryController->get_cate_on_form();
 ?>
     
     <div id="content" class="p-4 p-md-5 pt-5">

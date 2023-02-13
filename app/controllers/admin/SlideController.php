@@ -1,6 +1,6 @@
 <?php
 
-class CategoryController {
+class SlideController {
     
     public function slide(){
         //get slide data into tbl

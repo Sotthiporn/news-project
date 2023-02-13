@@ -20,15 +20,15 @@
       </div>
       <hr class="w-100 clearfix d-md-none">
       <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">Our App</h6>
+        <h6 class="text-uppercase mb-4 font-weight-bold">Our Platform</h6>
         <p>
-          <a class="text-white">One Sala</a>
+          <a class="text-white">Rupp Digital Card</a>
          </p>
          <p>
-          <a class="text-white">Instinct Mobile App</a>
+          <a class="text-white">RUPP Mobile App</a>
          </p>
         <p>
-          <a class="text-white">Instinct Institute Web</a>
+          <a class="text-white">RUPP Web</a>
         </p>
       </div>
       <hr class="w-100 clearfix d-md-none">
@@ -38,15 +38,15 @@
           <i class="fa fa-home mr-3"></i> #72, Str 566, Toul kork Commune Phnom Penh 00855
         </p>
         <p>
-          <i class="fa fa-envelope mr-3"></i> sotthiporns@gmail.com</p>
+          <i class="fa fa-envelope mr-3"></i> rupp_g23_e7_g1@gmail.com</p>
         <p>
-          <i class="fa fa-phone mr-3"></i> +855 96 860 5854</p>
+          <i class="fa fa-phone mr-3"></i> +855 12 345 6789</p>
       </div>
     </div>
     <hr>
     <div class="row d-flex align-items-center">
       <div class="col-md-7 col-lg-8">
-        <p class="text-center text-md-left">© 2023 Copyright:
+        <p class="text-center text-md-left">© <?php echo date('Y') ?> Copyright:
           <a href="/" class="text-white">
             <strong> RUPP-News 24h</strong>
           </a>
