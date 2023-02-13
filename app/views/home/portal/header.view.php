@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PN-News 24h</title>
+    <title>RUPP-News 24h</title>
     <link rel="icon" href="public/img/logo/news_logo.png">
     <link rel="stylesheet" href="public/style/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="public/style/bootstrap-4.5.0/css/bootstrap.min.css">
@@ -43,7 +43,7 @@
 
 <!-- category   -->
 <nav class="navbar navbar-expand-lg navbar-light bg-info text-white">
-  <a class="navbar-brand text-white" href="/">PN-News 24h</a>
+  <a class="navbar-brand text-white" href="/">RUPP-News 24h</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

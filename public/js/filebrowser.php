@@ -25,7 +25,7 @@
 	
 </style>
 <?php 
-include('../../_config_inc.php');
+include('~/_config_inc.php');
 $BASE_URL=BASE_URL;
 
 $dir =BASE_PATH."public/img/upload/news";
