@@ -24,7 +24,7 @@
             $query = $this->pdo->prepare("select $fld from $tbl WHERE $con ORDER BY $order");
             $query->execute();
     
-            return $query->fetchAll(PDO::FETCH_NUM);
+            return $query->fetchAll(PDO::FETCH_OBJ);
         }
     }
 

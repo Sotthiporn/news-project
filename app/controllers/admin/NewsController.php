@@ -6,13 +6,13 @@ class NewsController
     public function news()
     {
         //get news data into tbl
-        $news_data = App::get('database')->getAll_tbl_multi('tbl_news.*,tbl_category.id,tbl_category.name', 'tbl_news INNER JOIN tbl_category', 'tbl_news.cate_id = tbl_category.id', 'tbl_news.id DESC');
+        $news_data = App::get('database')->getAll_tbl_multi('tbl_news.*,tbl_category.name as category_name', 'tbl_news INNER JOIN tbl_category', 'tbl_news.cate_id = tbl_category.id', 'tbl_news.id DESC');
         return view_admin('news', ['news_data' => $news_data]);
     }
     public function get_add_news()
     {
         //get news autoid and form add
-        $news_data = App::get('database')->getAll_tbl('tbl_news', 'id>0', 'id');
+        $news_data = App::get('database')->getAll_tbl_limit('tbl_news', 'id>0', 'od DESC', '1');
         return view_admin('add-news', ['news_data' => $news_data]);
     }
     public function add_news_data()
@@ -63,6 +63,10 @@ class NewsController
         //get news form edit
         $id = $_GET['id'];
         $news_data = App::get('database')->getAll_tbl('tbl_news', 'id=' . $id . '', 'id DESC');
+        if(empty($news_data)){
+            die('There is no id "'.$id.'" in news data');
+        }
+
         return view_admin('edit-news', ['news_data' => $news_data]);
     }
     public function update_news()

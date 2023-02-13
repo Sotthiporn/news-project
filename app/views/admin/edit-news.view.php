@@ -1,15 +1,13 @@
 <?php 
     require 'portal/header.admin.view.php';  
-    $cate = $class->get_cate_on_form();
+    $categoryController = new CategoryController();
+    $cate = $categoryController->get_cate_on_form();
 ?>
     
     <div id="content" class="p-4 p-md-5 pt-5">
         <h1>Edit News</h1>
-        <form action="/admin/update-news?id=<?= $val->id ?>" method="post" class="upl">
-            <div class="form-group">
-                <label>ID</label>
-                <input type="text" class="form-control" name="txt-id" id="txt-id" value="<?= $val->id ?>" readonly>
-            </div>
+        <form action="/admin/update-news?id=<?= $news_data[0]->id ?>" method="post" class="upl">
+            <input type="text" class="form-control" name="txt-id" id="txt-id" value="<?= $news_data[0]->id ?>" hidden>
             <div class="form-group">
                 <label>Category</label>
                 <select class="form-control" name="txt-cate" id="txt-cate" require>
@@ -17,46 +15,46 @@
                     <?php
                         foreach ($cate as $key => $row) {
                             ?>
-                            <option value="<?= $row->id ?>"><?= $row->name ?></option>
+                            <option value="<?= $row->id ?>" <?= isset($news_data[0]) && $news_data[0]->cate_id == $row->id ? 'selected' : '' ?>><?= $row->name ?></option>
                             <?php
                         }
                     ?>
                 </select>
-                <input type="hidden" class="form-control" name="txt-cate-val" id="txt-cate-val" value="<?= $val->cate_id ?>">                
+                <input type="hidden" class="form-control" name="txt-cate-val" id="txt-cate-val" value="<?= $news_data[0]->cate_id ?>">                
             </div>
             <div class="form-group">
                 <label>Title</label>
-                <input type="text" class="form-control" name="txt-title" id="txt-title" value="<?= $val->title ?>">
+                <input type="text" class="form-control" name="txt-title" id="txt-title" value="<?= $news_data[0]->title ?>">
             </div>
             <div class="form-group">
                 <label>Description</label>
                <textarea class="form-control" name="txt-des" id="txt-des"></textarea>
             </div>
-            <input type="hidden" class="form-control" name="txt-des-val" id="txt-des-val" value='<?= $val->des ?>'>
+            <input type="hidden" class="form-control" name="txt-des-val" id="txt-des-val" value='<?= $news_data[0]->des ?>'>
             <div class="form-group">
                 <label>Location</label>
                 <select class="form-control" name="txt-location" id="txt-location" require>
                     <option value="1">1</option>
                     <option value="2">2</option>
                 </select>
-                <input type="hidden" class="form-control" name="txt-location-val" id="txt-location-val" value="<?= $val->location ?>">
+                <input type="hidden" class="form-control" name="txt-location-val" id="txt-location-val" value="<?= $news_data[0]->location ?>">
             </div>
             <div class="form-group">
                 <label>Order</label>
-                <input type="text" class="form-control" name="txt-od" id="txt-od" value="<?= $val->od ?>">
+                <input type="text" class="form-control" name="txt-od" id="txt-od" value="<?= $news_data[0]->od ?>">
             </div>
             <div class="form-group">
-                <label>Status(1=Enable,2=Disable)</label>
+                <label>Status</label>
                 <select class="form-control" name="txt-status" id="txt-status" require>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
+                    <option value="1">Enable</option>
+                    <option value="2">Disable</option>
                 </select>
-                <input type="hidden" class="form-control" name="txt-status-val" id="txt-status-val" value="<?= $val->status ?>">
+                <input type="hidden" class="form-control" name="txt-status-val" id="txt-status-val" value="<?= $news_data[0]->status ?>">
             </div>
             <div><label>Photo</label></div>
-            <div class="form-group img-box" style="background-image: url(/public/img/upload/news/<?= $val->img ?>);">
+            <div class="form-group img-box" style="background-image: url(/public/img/upload/news/<?= $news_data[0]->img ?>);">
                 <input type="file" name="txt-file" id="txt-file">
-                <input type="hidden" name="txt-photo" id="txt-photo" value="<?= $val->img ?>">
+                <input type="hidden" name="txt-photo" id="txt-photo" value="<?= $news_data[0]->img ?>">
             </div>
             <div style="float: right;">
             <button type="submit" class="btn btn-primary btn-edit-news">Update</button>

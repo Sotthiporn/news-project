@@ -4,14 +4,13 @@
     <div id="content" class="p-4 p-md-5 pt-5">
         <h1>Add new category</h1>
         <form action="/admin/add-cate-data" method="post">
-            <input type="text" class="form-control" name="txt-id" id="txt-id" value="<?= isset($cate_data->id) ? $cate_data->id+1 : 0 ?>" hidden>
             <div class="form-group">
                 <label>Name</label>
                 <input type="text" class="form-control" name="txt-name" id="txt-name" require>
             </div>
             <div class="form-group">
                 <label>Order</label>
-                <input type="number" min="0" class="form-control" name="txt-od" id="txt-od" value="<?= isset($cate_data->od) ? $cate_data->od+1 : 0 ?>" require>
+                <input type="number" min="0" class="form-control" name="txt-od" id="txt-od" value="<?= isset($cate_data[0]->od) ? $cate_data[0]->od+1 : 0 ?>" require>
             </div>
             <div class="form-group">
                 <label>Status</label>

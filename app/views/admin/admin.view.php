@@ -8,7 +8,6 @@
     <table class="table">
         <tr>
             <thead>
-                <td>ID</td>
                 <td>Name</td>
                 <td>Order</td>
                 <td>Status</td>
@@ -20,7 +19,6 @@
 		?> 
         <tr>
             <tbody>
-                <td><?= $val->id ?></td>
                 <td><?= $val->name ?></td>
                 <td><?= $val->od ?></td>
                 <td><?= $val->status == 1 ? 'Enabled' : ($val->status == 2 ? 'Disabled' : '') ?></td>

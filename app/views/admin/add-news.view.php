@@ -8,10 +8,6 @@
         <h1>Add new News</h1>
         <form action="/admin/add-news-data" method="post" class="upl">
             <div class="form-group">
-                <label>ID</label>
-                <input type="text" class="form-control" name="txt-id" id="txt-id" value="<?= $val->id+1 ?>" readonly>
-            </div>
-            <div class="form-group">
                 <label>Category</label>
                 <select class="form-control" name="txt-cate" id="txt-cate" require>
                     <option value="0">---Choose category---</option>
@@ -41,13 +37,13 @@
             </div>
             <div class="form-group">
                 <label>Order</label>
-                <input type="text" class="form-control" name="txt-od" id="txt-od" value="<?= $val->id+1 ?>" require>
+                <input type="text" class="form-control" name="txt-od" id="txt-od" value="<?= isset($news_data[0]->od) ? $news_data[0]->od+1 : 0 ?>" require>
             </div>
             <div class="form-group">
-                <label>Status(1=Enable,2=Disable)</label>
+                <label>Status</label>
                 <select class="form-control" name="txt-status" id="txt-status" require>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
+                    <option value="1">Enable</option>
+                    <option value="2">Disable</option>
                 </select>
             </div>
             <div><label>Photo</label></div>
