@@ -6,7 +6,7 @@ class SlideController
     public function slide()
     {
         //get slide data into tbl
-        $slide_data = App::get('database')->getAll_tbl_multi('tbl_slide.*,tbl_category.id,tbl_category.name', 'tbl_slide INNER JOIN tbl_category', 'tbl_slide.cate_id = tbl_category.id', 'tbl_slide.id DESC');
+        $slide_data = App::get('database')->getAll_tbl_multi('tbl_slide.*,tbl_category.name as category_name', 'tbl_slide INNER JOIN tbl_category', 'tbl_slide.cate_id = tbl_category.id', 'tbl_slide.id DESC');
         return view_admin('slide', ['slide_data' => $slide_data]);
     }
     public function get_add_slide()
