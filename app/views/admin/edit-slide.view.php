@@ -38,7 +38,7 @@ $cate = $categoryController->get_cate_on_form();
             </select>
         </div>
         <div><label>Photo</label></div>
-        <div class="form-group img-box" style="background-image: url(/public/img/upload/news/<?= $slide_data[0]->img ?>);">
+        <div class="form-group img-box" style="background-image: url(/public/img/upload/slide/<?= $slide_data[0]->photo ?>);">
             <input type="file" name="txt-file" id="txt-file" required>
             <input type="hidden" name="txt-photo" id="txt-photo" value="<?= $slide_data[0]->img ?>">
         </div>
@@ -108,7 +108,7 @@ $cate = $categoryController->get_cate_on_form();
                 },
                 success: function(data) {
                     imgBox.css({
-                        'background-image': 'url(/public/img/upload/news/' + data.imgName + ')'
+                        'background-image': 'url(/public/img/upload/slide/' + data.imgName + ')'
                     });
                     imgBox.find('.loading-img').remove();
                     eThis.parent().find('#txt-photo').val(data.imgName);
