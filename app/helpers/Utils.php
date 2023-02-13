@@ -51,6 +51,11 @@ class Utils
     //Upload Image
     public static function uploadImage($folderPath, $FILES)
     {
+        //Create folder not yet have
+        if (!is_dir($folderPath)) {
+            mkdir($folderPath, 0777, true);
+        }
+
         $file = $FILES['txt-file']['tmp_name'];
         $sourceProperties = getimagesize($file);
         $fileNewName = time();
