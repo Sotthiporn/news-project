@@ -1,7 +1,7 @@
 <?php
 
 class Request {
-    public function url(){
+    public static function url(){
         $url = strtok($_SERVER['REQUEST_URI'], '?');
         $url = trim($url, '/');
         return $url;
