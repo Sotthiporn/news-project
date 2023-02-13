@@ -10,20 +10,20 @@
                 ?>
                     <div class="col-xl-12 box">
                         <div class="img-box">
-                            <a href="news-detail?id=<?= $vals[0] ?>">
-                                <img src="public/img/upload/news/<?= $vals[5] ?>">
+                            <a href="news-detail?id=<?= $vals->id ?>">
+                                <img src="public/img/upload/news/<?= $vals->img ?>">
                             </a>
                         </div>
                         <div class="txt-box">
-                            <a href="news-detail?id=<?= $vals[0] ?>"><?= $vals[2] ?>
+                            <a href="news-detail?id=<?= $vals->id ?>"><?= $vals->title ?>
                                 <p style="color: cadetblue;"><i class="fa fa-clock-o" aria-hidden="true"></i>
                                     <?php
-                                    $date = date("Y-m-d", strtotime($vals[2]));
-                                    $time =  date("H:i:s", strtotime($vals[2]));
+                                    $date = date("Y-m-d", strtotime($vals->date_post));
+                                    $time =  date("H:i:s", strtotime($vals->date_post));
                                     $class->get_post_date($time, $date);
                                     ?>
                                 </p>
-                                <p><?= mb_substr(strip_tags($vals[2]), 0, 100, "utf-8"); ?>...</p>
+                                <p><?= mb_substr(strip_tags($vals->des), 0, 100, "utf-8"); ?>...</p>
                             </a>
                         </div>
                     </div>

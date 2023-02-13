@@ -2,7 +2,6 @@
     require 'portal/header.view.php';
     include('_config_inc.php');
     $BASE_URL = BASE_URL;
-    var_dump($BASE_URL); die();
 ?>
 
 <!-- news by click -->

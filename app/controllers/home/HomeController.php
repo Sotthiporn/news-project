@@ -32,8 +32,11 @@ class HomeController
     }
     public function news_list2()
     {
-        $cate_id = $_GET['cate'];
-        $news_list2 = App::get('database')->getAll_tbl_limit('tbl_news', 'status=1 && location=2 && cate_id=' . $cate_id . '', 'od DESC', '0,10');
+        $cateIdCondition = '';
+        if(isset($_GET['cate'])){
+            $cateIdCondition = '&& cate_id' . $_GET['cate'];
+        }
+        $news_list2 = App::get('database')->getAll_tbl_limit('tbl_news', 'status=1 && location=2 ' . $cateIdCondition . '', 'od DESC', '0,10');
         return $news_list2;
     }
     public function news_detail()
@@ -97,7 +100,7 @@ class HomeController
             $search = App::get('database')->getAll_tbl_multi(
                 "tbl_news.*,tbl_category.name as category_name",
                 "tbl_news INNER JOIN tbl_category ON tbl_news.cate_id = tbl_category.id",
-                "tbl_news.title LIKE '$search_value' OR tbl_news.title LIKE '%$search_value' OR tbl_news.title LIKE '$search_value%' OR tbl_news.title LIKE '%$search_value%' OR tbl_news.des LIKE '$search_value' OR tbl_news.des LIKE '%$search_value' OR tbl_news.des LIKE '$search_value%' OR '$search_value%' OR tbl_news.des LIKE '%$search_value%' OR tbl_category.name LIKE '$search_value' OR tbl_category.name LIKE '%$search_value' OR tbl_category.name LIKE '$search_value%' OR '$search_value%' OR tbl_category.name LIKE '%$search_value%' AND location=1",
+                "(tbl_news.title LIKE '%$search_value%' OR tbl_news.des LIKE '%$search_value%' OR tbl_category.name LIKE '%$search_value%') AND location=1",
                 "tbl_news.id DESC"
             );
             return view('search', ['search' => $search]);
