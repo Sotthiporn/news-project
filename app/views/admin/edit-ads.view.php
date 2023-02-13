@@ -1,7 +1,5 @@
 <?php 
-    require 'portal/header.admin.view.php';  
-    foreach ($ads_data as $key => $val) {
-    }
+    require 'portal/header.admin.view.php'; 
 ?>
     
     <div id="content" class="p-4 p-md-5 pt-5">

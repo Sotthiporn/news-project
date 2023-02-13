@@ -1,8 +1,6 @@
 <?php 
     require 'portal/header.admin.view.php';  
     $cate = $class->get_cate_on_form();
-    foreach ($news_data as $key => $val) {
-    }
 ?>
     
     <div id="content" class="p-4 p-md-5 pt-5">
