@@ -67,25 +67,25 @@ class HomeController
     public function slideHome()
     {
         //get slide data into HomePage
-        $slide_data = App::get('database')->getAll_tbl_multi('tbl_slide.*,tbl_category.id,tbl_category.name', 'tbl_slide INNER JOIN tbl_category', 'tbl_slide.cate_id = tbl_category.id', 'tbl_slide.id DESC LIMIT 0,1');
+        $slide_data = App::get('database')->getAll_tbl_multi('tbl_slide.*,tbl_category.name as category_name', 'tbl_slide INNER JOIN tbl_category', 'tbl_slide.cate_id = tbl_category.id', 'tbl_slide.id DESC LIMIT 0,1');
         return $slide_data;
     }
     public function slideHome2()
     {
         //get slide data into HomePage
-        $slide_data = App::get('database')->getAll_tbl_multi('tbl_slide.*,tbl_category.id,tbl_category.name', 'tbl_slide INNER JOIN tbl_category', 'tbl_slide.cate_id = tbl_category.id', 'tbl_slide.id DESC LIMIT 1,1');
+        $slide_data = App::get('database')->getAll_tbl_multi('tbl_slide.*,tbl_category.name as category_name', 'tbl_slide INNER JOIN tbl_category', 'tbl_slide.cate_id = tbl_category.id', 'tbl_slide.id DESC LIMIT 1,1');
         return $slide_data;
     }
     public function slideHome3()
     {
         //get slide data into HomePage
-        $slide_data = App::get('database')->getAll_tbl_multi('tbl_slide.*,tbl_category.id,tbl_category.name', 'tbl_slide INNER JOIN tbl_category', 'tbl_slide.cate_id = tbl_category.id', 'tbl_slide.id DESC LIMIT 2,1');
+        $slide_data = App::get('database')->getAll_tbl_multi('tbl_slide.*,tbl_category.name as category_name', 'tbl_slide INNER JOIN tbl_category', 'tbl_slide.cate_id = tbl_category.id', 'tbl_slide.id DESC LIMIT 2,1');
         return $slide_data;
     }
     public function slideHome4()
     {
         //get slide data into HomePage
-        $slide_data = App::get('database')->getAll_tbl_multi('tbl_slide.*,tbl_category.id,tbl_category.name', 'tbl_slide INNER JOIN tbl_category', 'tbl_slide.cate_id = tbl_category.id', 'tbl_slide.id DESC LIMIT 3,1');
+        $slide_data = App::get('database')->getAll_tbl_multi('tbl_slide.*,tbl_category.name as category_name', 'tbl_slide INNER JOIN tbl_category', 'tbl_slide.cate_id = tbl_category.id', 'tbl_slide.id DESC LIMIT 3,1');
         return $slide_data;
     }
 
@@ -95,7 +95,7 @@ class HomeController
         $search_value = $_GET['search'];
         if (isset($_GET['btnSearch'])) {
             $search = App::get('database')->getAll_tbl_multi(
-                "tbl_news.*,tbl_category.id,tbl_category.name",
+                "tbl_news.*,tbl_category.name as category_name",
                 "tbl_news INNER JOIN tbl_category ON tbl_news.cate_id = tbl_category.id",
                 "tbl_news.title LIKE '$search_value' OR tbl_news.title LIKE '%$search_value' OR tbl_news.title LIKE '$search_value%' OR tbl_news.title LIKE '%$search_value%' OR tbl_news.des LIKE '$search_value' OR tbl_news.des LIKE '%$search_value' OR tbl_news.des LIKE '$search_value%' OR '$search_value%' OR tbl_news.des LIKE '%$search_value%' OR tbl_category.name LIKE '$search_value' OR tbl_category.name LIKE '%$search_value' OR tbl_category.name LIKE '$search_value%' OR '$search_value%' OR tbl_category.name LIKE '%$search_value%' AND location=1",
                 "tbl_news.id DESC"

@@ -8,12 +8,12 @@
                   $slide1 = $class->slideHome();
                   foreach($slide1 as $val){ 
                 ?>
-                 <a href="/news-detail?id=<?= $val[5] ?>">
-                  <img src="/../public/img/upload/news/<?= $val[2] ?>">
-                  <a href="/news-list?cate=<?= $val[4] ?>">
-                   <div class="text-cate-slide<?= $val[4] ?>"><?= $val[8] ?></div>
+                 <a href="/news-detail?id=<?= $val->news_id ?>">
+                  <img src="/../public/img/upload/news/<?= $val->photo ?>">
+                  <a href="/news-list?cate=<?= $val->cate_id ?>">
+                   <div class="text-cate-slide<?= $val->cate_id ?>"><?= $val->category_name ?></div>
                   </a>
-                   <div class="title-slide"><?= $val[1] ?></div>
+                   <div class="title-slide"><?= $val->title ?></div>
               </a>
               <?php } ?>
           </div>  
@@ -22,12 +22,12 @@
                   $slide2 = $class->slideHome2();
                   foreach($slide2 as $val){ 
                 ?>
-              <a href="/news-detail?id=<?= $val[5] ?>">
-                  <img src="/../public/img/upload/news/<?= $val[2] ?>">
-                  <a href="/news-list?cate=<?= $val[4] ?>">
-                    <div class="text-cate-slide<?= $val[4] ?>"><?= $val[8] ?></div>
+              <a href="/news-detail?id=<?= $val->news_id ?>">
+                  <img src="/../public/img/upload/news/<?= $val->photo ?>">
+                  <a href="/news-list?cate=<?= $val->cate_id ?>">
+                    <div class="text-cate-slide<?= $val->cate_id ?>"><?= $val->category_name ?></div>
                   </a>
-                  <div class="title-slide"><?= $val[1] ?></div>
+                  <div class="title-slide"><?= $val->title ?></div>
                 </a>
                 <?php } ?>
           </div>
@@ -36,12 +36,12 @@
                   $slide3 = $class->slideHome3();
                   foreach($slide3 as $val){ 
                 ?>
-              <a href="/news-detail?id=<?= $val[5] ?>">
-                  <img src="/../public/img/upload/news/<?= $val[2] ?>">
-                  <a href="/news-list?cate=<?= $val[4] ?>">
-                    <div class="text-cate-slide<?= $val[4] ?>"><?= $val[8] ?></div>
+              <a href="/news-detail?id=<?= $val->news_id ?>">
+                  <img src="/../public/img/upload/news/<?= $val->photo ?>">
+                  <a href="/news-list?cate=<?= $val->cate_id ?>">
+                    <div class="text-cate-slide<?= $val->cate_id ?>"><?= $val->category_name ?></div>
                   </a>
-                  <div class="title-slide"><?= $val[1] ?></div>
+                  <div class="title-slide"><?= $val->title ?></div>
                 </a>
                 <?php } ?>
           </div>
@@ -50,12 +50,12 @@
                   $slide4 = $class->slideHome4();
                   foreach($slide4 as $val){ 
                 ?>
-              <a href="/news-detail?id=<?= $val[5] ?>">
-                  <img src="/../public/img/upload/news/<?= $val[2] ?>">
-                  <a href="/news-list?cate=<?= $val[4] ?>">
-                    <div class="text-cate-slide<?= $val[4] ?>"><?= $val[8] ?></div>
+              <a href="/news-detail?id=<?= $val->news_id ?>">
+                  <img src="/../public/img/upload/news/<?= $val->photo ?>">
+                  <a href="/news-list?cate=<?= $val->cate_id ?>">
+                    <div class="text-cate-slide<?= $val->cate_id ?>"><?= $val->category_name ?></div>
                   </a>
-                  <div class="title-slide"><?= $val[1] ?></div>
+                  <div class="title-slide"><?= $val->title ?></div>
                 </a>
                 <?php } ?>
           </div>
