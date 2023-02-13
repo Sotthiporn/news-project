@@ -41,7 +41,7 @@ class SlideController
         //get slide form edit
         $id = $_GET['id'];
         $slide_data = App::get('database')->getAll_tbl('tbl_slide', 'id=' . $id . '', 'id DESC');
-        if(empty($news_data)){
+        if(empty($slide_data)){
             die('There is no id "'.$id.'" in slide data');
         }
         return view_admin('edit-slide', ['slide_data' => $slide_data]);

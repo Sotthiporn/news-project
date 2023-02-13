@@ -24,7 +24,7 @@
                     <td><?= $val->category_name ?></td>
                     <td><?= $val->title ?></td>
                     <td><?= $val->od ?></td>
-                    <td><?= $val->status ?></td>
+                    <td><?= $val->status == 1 ? 'Enabled' : ($val->status == 2 ? 'Disabled' : '') ?></td>
                     <td>
                         <img src="/public/img/upload/slide/<?= $val->photo ?>" alt="<?= $val->photo ?>" onerror="this.src='/public/img/icon/bg_gallery.png'" width="60" height="60" style="margin-top: -12px;">
                     </td>
