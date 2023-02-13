@@ -6,7 +6,7 @@ class Request {
         $url = trim($url, '/');
         return $url;
     }
-    public function rq_method(){
+    public static function rq_method(){
         return $_SERVER["REQUEST_METHOD"];
     }
 }
