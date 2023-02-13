@@ -28,12 +28,10 @@ class NewsController
         $input = $_POST;
         $des = trim($input['txt-des']);
 
-        date_default_timezone_set("Asia/Phnom_Penh");
-        $date = date("Y/m/d") . " " . date("h:i:s");
+        $date = Utils::getDateTimeNow();
 
         $name_link = $input['txt-title'];
-        $connect_string = trim($name_link);
-        $connect_string = preg_replace("#(\p{P}|\p{C}|\p{S}|\p{Z})+#u", "-", $name_link);
+        $connect_string = Utils::characterConcatDash($name_link);
 
         if ($input['txt-cate'] == 0) {
             return redirect('/admin/add-news');
@@ -79,8 +77,7 @@ class NewsController
         $input = $_POST;
         $des = trim($input['txt-des']);
         $name_link = $input['txt-title'];
-        $connect_string = trim($name_link);
-        $connect_string = preg_replace("#(\p{P}|\p{C}|\p{S}|\p{Z})+#u", "-", $name_link);
+        $connect_string = Utils::characterConcatDash($name_link);
 
         $update->execute([
             $input['txt-title'],
@@ -108,45 +105,8 @@ class NewsController
     }
     public function upl_img_news()
     {
-        $file = $_FILES['txt-file']['tmp_name'];
-        $sourceProperties = getimagesize($file);
-        $fileNewName = time();
         $folderPath = "public/img/upload/news/";
-        $ext = pathinfo($_FILES['txt-file']['name'], PATHINFO_EXTENSION);
-        $imageType = $sourceProperties[2];
-        $filesize = filesize($file);
-        $dst_w = 760;
-        $dst_h = '';
-        if ($filesize <= (500 * 1024)) {
-            move_uploaded_file($file, $folderPath . $fileNewName . "." . $ext);
-            $res['imgName'] = $fileNewName . "." . $ext;
-            echo json_encode($res);
-            return;
-        }
-        switch ($imageType) {
-            case IMAGETYPE_PNG:
-                $imageResourceId = imagecreatefrompng($file);
-                $targetLayer = Utils::imageResize($imageResourceId, $sourceProperties[0], $sourceProperties[1], $dst_w, $dst_h);
-                imagepng($targetLayer, $folderPath . $fileNewName . "." . $ext);
-                break;
-
-            case IMAGETYPE_GIF:
-                $imageResourceId = imagecreatefromgif($file);
-                $targetLayer = Utils::imageResize($imageResourceId, $sourceProperties[0], $sourceProperties[1], $dst_w, $dst_h);
-                imagegif($targetLayer, $folderPath . $fileNewName . "." . $ext);
-                break;
-            case IMAGETYPE_JPEG:
-                $imageResourceId = imagecreatefromjpeg($file);
-                $targetLayer = Utils::imageResize($imageResourceId, $sourceProperties[0], $sourceProperties[1], $dst_w, $dst_h);
-                imagejpeg($targetLayer, $folderPath . $fileNewName . "." . $ext);
-                break;
-            default:
-                echo "Invalid Image type.";
-                exit;
-                break;
-        }
-        $res['imgName'] = $fileNewName . "." . $ext;
-        echo json_encode($res);
+        return Utils::uploadImage($folderPath, $_FILES);
     }
 }
 
