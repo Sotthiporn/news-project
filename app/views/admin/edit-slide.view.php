@@ -10,7 +10,7 @@ $cate = $categoryController->get_cate_on_form();
         <input type="text" class="form-control" name="txt-id" id="txt-id" value="<?= $slide_data[0]->id ?>" hidden>
         <div class="form-group">
             <label>Category</label>
-            <select class="form-control" name="txt-cate" id="txt-cate" require>
+            <select class="form-control" name="txt-cate" id="txt-cate" required>
                 <option value="0">---Choose category---</option>
                 <?php
                 foreach ($cate as $key => $row) {
@@ -24,22 +24,22 @@ $cate = $categoryController->get_cate_on_form();
         </div>
         <div class="form-group">
             <label>Title</label>
-            <input type="text" class="form-control" name="txt-title" id="txt-title" value="<?= $slide_data[0]->title ?>" require>
+            <input type="text" class="form-control" name="txt-title" id="txt-title" value="<?= $slide_data[0]->title ?>" required>
         </div>
         <div class="form-group">
             <label>Order</label>
-            <input type="text" class="form-control" name="txt-od" id="txt-od" value="<?= $slide_data[0]->od ?>" require>
+            <input type="text" class="form-control" name="txt-od" id="txt-od" value="<?= $slide_data[0]->od ?>" required>
         </div>
         <div class="form-group">
             <label>Status</label>
-            <select class="form-control" name="txt-status" id="txt-status" require>
+            <select class="form-control" name="txt-status" id="txt-status" required>
                 <option value="1" <?= $slide_data[0]->status == 1 ? 'selected' : '' ?>>Enable</option>
                 <option value="2" <?= $slide_data[0]->status == 2 ? 'selected' : '' ?>>Disable</option>
             </select>
         </div>
         <div><label>Photo</label></div>
         <div class="form-group img-box" style="background-image: url(/public/img/upload/news/<?= $slide_data[0]->img ?>);">
-            <input type="file" name="txt-file" id="txt-file">
+            <input type="file" name="txt-file" id="txt-file" required>
             <input type="hidden" name="txt-photo" id="txt-photo" value="<?= $slide_data[0]->img ?>">
         </div>
         <div style="float: right;">

@@ -10,7 +10,7 @@ $cate = $categoryController->get_cate_on_form();
         <input type="text" class="form-control" name="txt-id" id="txt-id" value="<?= $news_data[0]->id ?>" hidden>
         <div class="form-group">
             <label>Category</label>
-            <select class="form-control" name="txt-cate" id="txt-cate" require>
+            <select class="form-control" name="txt-cate" id="txt-cate" required>
                 <option value="0">---Choose category---</option>
                 <?php
                 foreach ($cate as $key => $row) {
@@ -23,33 +23,33 @@ $cate = $categoryController->get_cate_on_form();
         </div>
         <div class="form-group">
             <label>Title</label>
-            <input type="text" class="form-control" name="txt-title" id="txt-title" value="<?= $news_data[0]->title ?>">
+            <input type="text" class="form-control" name="txt-title" id="txt-title" value="<?= $news_data[0]->title ?>" required>
         </div>
         <div class="form-group">
             <label>Description</label>
-            <textarea class="form-control" name="txt-des" id="txt-des"><?= $news_data[0]->des ?></textarea>
+            <textarea class="form-control" name="txt-des" id="txt-des" required><?= $news_data[0]->des ?></textarea>
         </div>
         <div class="form-group">
             <label>Location</label>
-            <select class="form-control" name="txt-location" id="txt-location" require>
+            <select class="form-control" name="txt-location" id="txt-location" required>
                 <option value="1" <?= $news_data[0]->location == 1 ? 'selected' : '' ?>>1</option>
                 <option value="2" <?= $news_data[0]->location == 2 ? 'selected' : '' ?>>2</option>
             </select>
         </div>
         <div class="form-group">
             <label>Order</label>
-            <input type="text" class="form-control" name="txt-od" id="txt-od" value="<?= $news_data[0]->od ?>">
+            <input type="text" class="form-control" name="txt-od" id="txt-od" value="<?= $news_data[0]->od ?>" required>
         </div>
         <div class="form-group">
             <label>Status</label>
-            <select class="form-control" name="txt-status" id="txt-status" require>
+            <select class="form-control" name="txt-status" id="txt-status" required>
                 <option value="1" <?= $news_data[0]->status == 1 ? 'selected' : '' ?>>Enable</option>
                 <option value="2" <?= $news_data[0]->status == 2 ? 'selected' : '' ?>>Disable</option>
             </select>
         </div>
         <div><label>Photo</label></div>
         <div class="form-group img-box" style="background-image: url(/public/img/upload/news/<?= $news_data[0]->img ?>);">
-            <input type="file" name="txt-file" id="txt-file">
+            <input type="file" name="txt-file" id="txt-file" required>
             <input type="hidden" name="txt-photo" id="txt-photo" value="<?= $news_data[0]->img ?>">
         </div>
         <div style="float: right;">

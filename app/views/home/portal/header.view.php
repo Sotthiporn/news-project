@@ -75,7 +75,7 @@
       ?>
     </ul>
     <form action="/search-news" method="get"  class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="ស្វែងរក" aria-label="Search" name="search">
+      <input class="form-control mr-sm-2" type="search" placeholder="ស្វែងរក" aria-label="Search" name="search" required>
       <button class="btn btn-dark text-white my-2 my-sm-0" type="submit" name="btnSearch">ស្វែងរក</button>
     </form>
   </div>

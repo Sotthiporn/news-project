@@ -9,7 +9,7 @@ $cate = $categoryController->get_cate_on_form();
     <form action="/admin/add-slide-data" method="post" class="upl">
         <div class="form-group">
             <label>Category</label>
-            <select class="form-control" name="txt-cate" id="txt-cate" require>
+            <select class="form-control" name="txt-cate" id="txt-cate" required>
                 <option value="0">---Choose category---</option>
                 <?php
                 foreach ($cate as $key => $row) {
@@ -22,22 +22,22 @@ $cate = $categoryController->get_cate_on_form();
         </div>
         <div class="form-group">
             <label>Title</label>
-            <input type="text" class="form-control" name="txt-title" id="txt-title" require>
+            <input type="text" class="form-control" name="txt-title" id="txt-title" required>
         </div>
         <div class="form-group">
             <label>Order</label>
-            <input type="text" class="form-control" name="txt-od" id="txt-od" value="<?= isset($slide_data[0]->od) ? $slide_data[0]->od + 1 : 0 ?>" require>
+            <input type="text" class="form-control" name="txt-od" id="txt-od" value="<?= isset($slide_data[0]->od) ? $slide_data[0]->od + 1 : 0 ?>" required>
         </div>
         <div class="form-group">
             <label>Status</label>
-            <select class="form-control" name="txt-status" id="txt-status" require>
+            <select class="form-control" name="txt-status" id="txt-status" required>
                 <option value="1">Enable</option>
                 <option value="2">Disable</option>
             </select>
         </div>
         <div><label>Photo</label></div>
         <div class="form-group img-box">
-            <input type="file" name="txt-file" id="txt-file">
+            <input type="file" name="txt-file" id="txt-file" required>
             <input type="hidden" name="txt-photo" id="txt-photo">
         </div>
         <div style="float: right;">

@@ -9,7 +9,7 @@
         <form action="/admin/add-news-data" method="post" class="upl">
             <div class="form-group">
                 <label>Category</label>
-                <select class="form-control" name="txt-cate" id="txt-cate" require>
+                <select class="form-control" name="txt-cate" id="txt-cate" required>
                     <option value="0">---Choose category---</option>
                     <?php
                         foreach ($cate as $key => $row) {
@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                 <label>Title</label>
-                <input type="text" class="form-control" name="txt-title" id="txt-title" require>
+                <input type="text" class="form-control" name="txt-title" id="txt-title" required>
             </div>
             <div class="form-group">
                 <label>Description</label>
@@ -30,18 +30,18 @@
             </div>
             <div class="form-group">
                 <label>Location</label>
-                <select class="form-control" name="txt-location" id="txt-location" require>
+                <select class="form-control" name="txt-location" id="txt-location" required>
                     <option value="1">1</option>
                     <option value="2">2</option>
                 </select>
             </div>
             <div class="form-group">
                 <label>Order</label>
-                <input type="text" class="form-control" name="txt-od" id="txt-od" value="<?= isset($news_data[0]->od) ? $news_data[0]->od+1 : 0 ?>" require>
+                <input type="text" class="form-control" name="txt-od" id="txt-od" value="<?= isset($news_data[0]->od) ? $news_data[0]->od+1 : 0 ?>" required>
             </div>
             <div class="form-group">
                 <label>Status</label>
-                <select class="form-control" name="txt-status" id="txt-status" require>
+                <select class="form-control" name="txt-status" id="txt-status" required>
                     <option value="1">Enable</option>
                     <option value="2">Disable</option>
                 </select>
