@@ -89,7 +89,7 @@ hr {
     height: 100px;
     float: left;
     border: 1px solid #ccc;
-    background-image: url(/public/img/icon/bg_gallery.png);
+    background-image: url(/public/img/default/bg_gallery.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

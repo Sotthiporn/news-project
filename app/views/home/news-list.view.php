@@ -11,7 +11,7 @@
                 <div class="col-xl-12 box">
                    <div class="img-box">
                         <a href="news-detail?id=<?= $vals->id ?>">
-                            <img src="public/img/upload/news/<?= $vals->img  ?>">
+                            <img onerror="this.src='/public/img/default/no_image_found.png'" src="public/img/upload/news/<?= $vals->img  ?>">
                          </a>
                    </div>
                    <div class="txt-box">
@@ -39,7 +39,7 @@
                 <div class="col-xl-12 col-lg-12 ads-box-news">
                     <div class="img-box">
                         <a href="news-detail?id=<?= $vals->id ?>">
-                            <img src="public/img/upload/news/<?= $vals->img  ?>">
+                            <img onerror="this.src='/public/img/default/no_image_found.png'" src="public/img/upload/news/<?= $vals->img  ?>">
                         </a>
                     </div>
                     <div class="txt-box">
