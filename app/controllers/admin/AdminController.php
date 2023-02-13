@@ -9,7 +9,7 @@ class AdminController{
         return view_admin('admin', ['cate_data' => $cate_data]);   
     }
     public function get_add_cate(){
-         //get category autoid and form add
+         //get category auto id and form add
         $cate_data = App::get('database')->getAll_tbl('tbl_category','id>0','id');
         return view_admin('add-cate', ['cate_data' => $cate_data]);
     }
