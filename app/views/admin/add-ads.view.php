@@ -6,16 +6,12 @@
         <h1>Add new advertise</h1>
         <form action="/admin/add-ads-data" method="post" class="upl">
             <div class="form-group">
-                <label>ID</label>
-                <input type="text" class="form-control" name="txt-id" id="txt-id" value="<?= $val->id+1 ?>" readonly>
-            </div>
-            <div class="form-group">
                 <label>URL</label>
-                <input type="text" class="form-control" name="txt-url" id="txt-url" require>
+                <input type="text" class="form-control" name="txt-url" id="txt-url" required>
             </div>
             <div class="form-group">
                 <label>Location</label>
-                <select class="form-control" name="txt-location" id="txt-location" require>
+                <select class="form-control" name="txt-location" id="txt-location" required>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -23,21 +19,21 @@
             </div>
             <div class="form-group">
                 <label>Type</label>
-                <select class="form-control" name="txt-type" id="txt-type" require>
+                <select class="form-control" name="txt-type" id="txt-type" required>
                     <option value="Photo">Photo</option>
                     <option value="Video">Video</option>
                 </select>
             </div>
             <div class="form-group">
-                <label>Status(1=Enable,2=Disable)</label>
-                <select class="form-control" name="txt-status" id="txt-status" require>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
+                <label>Status</label>
+                <select class="form-control" name="txt-status" id="txt-status" required>
+                    <option value="1">Enable</option>
+                    <option value="2">Disable</option>
                 </select>
             </div>
             <div><label>Photo</label></div>
             <div class="form-group img-box">
-                <input type="file" name="txt-file" id="txt-file">
+                <input type="file" name="txt-file" id="txt-file" required>
                 <input type="hidden" name="txt-photo" id="txt-photo">
             </div>
             <div style="float: right;">

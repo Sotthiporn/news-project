@@ -7,41 +7,41 @@
         <form method="post" class="upl">
             <div class="form-group">
                 <label>ID</label>
-                <input type="text" class="form-control" name="txt-id" id="txt-id" value="<?= $val->id ?>" readonly>
+                <input type="text" class="form-control" name="txt-id" id="txt-id" value="<?= $ads_data[0]->id ?>" readonly>
             </div>
             <div class="form-group">
                 <label>URL</label>
-                <input type="text" class="form-control" name="txt-url" id="txt-url" value='<?= $val->url ?>'>
+                <input type="text" class="form-control" name="txt-url" id="txt-url" value='<?= $ads_data[0]->url ?>'>
             </div>
             <div class="form-group">
                 <label>Location</label>
-                <select class="form-control" name="txt-location" id="txt-location" require>
+                <select class="form-control" name="txt-location" id="txt-location" required>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                 </select>
-                <input type="hidden" name="txt-location-val" id="txt-location-val" value="<?= $val->location ?>">
+                <input type="hidden" name="txt-location-val" id="txt-location-val" value="<?= $ads_data[0]->location ?>">
             </div>
             <div class="form-group">
                 <label>Type</label>
-                <select class="form-control" name="txt-type" id="txt-type" require>
+                <select class="form-control" name="txt-type" id="txt-type" required>
                     <option value="Photo">Photo</option>
                     <option value="Video">Video</option>
                 </select>
-                <input type="hidden" name="txt-type-val" id="txt-type-val" value="<?= $val->type ?>">
+                <input type="hidden" name="txt-type-val" id="txt-type-val" value="<?= $ads_data[0]->type ?>">
             </div>
             <div class="form-group">
                 <label>Status(1=Enable,2=Disable)</label>
-                <select class="form-control" name="txt-status" id="txt-status" require>
+                <select class="form-control" name="txt-status" id="txt-status" required>
                     <option value="1">1</option>
                     <option value="2">2</option>
                 </select>
-                <input type="hidden" name="txt-status-val" id="txt-status-val" value="<?= $val->status ?>">
+                <input type="hidden" name="txt-status-val" id="txt-status-val" value="<?= $ads_data[0]->status ?>">
             </div>
             <div><label>Photo</label></div>
-            <div class="form-group img-box" style="background-image: url(/public/img/upload/ads/<?= $val->img ?>);">
-                <input type="file" name="txt-file" id="txt-file">
-                <input type="hidden" name="txt-photo" id="txt-photo" value="<?= $val->img ?>">
+            <div class="form-group img-box" style="background-image: url(/public/img/upload/ads/<?= $ads_data[0]->img ?>);">
+                <input type="file" name="txt-file" id="txt-file" required>
+                <input type="hidden" name="txt-photo" id="txt-photo" value="<?= $ads_data[0]->img ?>">
             </div>
             <div style="float: right;">
             <button type="submit" class="btn btn-primary btn-edit-ads">Update</button>
@@ -69,7 +69,7 @@ $(document).ready(function(){
         var status = $('#txt-status').val();
        
         $.ajax({
-            url: "/admin/update-ads?id=" + <?php echo $val->id ?>,
+            url: "/admin/update-ads?id=" + <?php echo $ads_data[0]->id ?>,
             type: "POST",
             data: {
                 url:url,

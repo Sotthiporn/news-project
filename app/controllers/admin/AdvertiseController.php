@@ -38,6 +38,10 @@ class AdvertiseController {
         //get advertise form edit
         $id = $_GET['id'];
         $ads_data = App::get('database')->getAll_tbl('tbl_ads', 'id=' . $id . '', 'id DESC');
+        if(empty($ads_data)){
+            die('There is no id "'.$id.'" in advertise data');
+        }
+
         return view_admin('edit-ads', ['ads_data' => $ads_data]);
     }
     public function update_ads()
