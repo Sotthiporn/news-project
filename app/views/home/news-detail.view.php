@@ -1,7 +1,8 @@
 <?php 
-    include('~/_config_inc.php');
-    $BASE_URL = BASE_URL; 
     require 'portal/header.view.php';
+    include('_config_inc.php');
+    $BASE_URL = BASE_URL;
+    var_dump($BASE_URL); die();
 ?>
 
 <!-- news by click -->
@@ -60,9 +61,9 @@
 
             <div class="row">
                 <div class="col-xl-12">
-                    <div class="fb-page" data-href="https://www.facebook.com/instinct.institute" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                        <blockquote cite="https://www.facebook.com/instinct.institute" class="fb-xfbml-parse-ignore">
-                            <a href="https://www.facebook.com/instinct.institute">Royal University Of Phnom Penh
+                    <div class="fb-page" data-href="https://www.facebook.com/rupp.edu.kh" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                        <blockquote cite="https://www.facebook.com/rupp.edu.kh" class="fb-xfbml-parse-ignore">
+                            <a href="https://www.facebook.com/rupp.edu.kh">Royal University Of Phnom Penh
                             </a>
                         </blockquote>
                     </div>
