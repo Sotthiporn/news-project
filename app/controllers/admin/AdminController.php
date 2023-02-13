@@ -145,7 +145,7 @@ class AdminController{
         $file = $_FILES['txt-file']['tmp_name']; 
         $sourceProperties = getimagesize($file);
         $fileNewName = time();
-        $folderPath = "public/img/news/";
+        $folderPath = "public/img/upload/news/";
         $ext = pathinfo($_FILES['txt-file']['name'], PATHINFO_EXTENSION);
         $imageType = $sourceProperties[2];
         $filesize = filesize($file);
@@ -257,7 +257,7 @@ class AdminController{
       $file = $_FILES['txt-file']['tmp_name']; 
       $sourceProperties = getimagesize($file);
       $fileNewName = time();
-      $folderPath = "public/img/ads/";
+      $folderPath = "public/img/upload/ads/";
       $ext = pathinfo($_FILES['txt-file']['name'], PATHINFO_EXTENSION);
       $imageType = $sourceProperties[2];
       $filesize = filesize($file);
@@ -400,7 +400,7 @@ class AdminController{
         $file = $_FILES['txt-file']['tmp_name']; 
         $sourceProperties = getimagesize($file);
         $fileNewName = time();
-        $folderPath = "public/img/news/";
+        $folderPath = "public/img/upload/news/";
         $ext = pathinfo($_FILES['txt-file']['name'], PATHINFO_EXTENSION);
         $imageType = $sourceProperties[2];
         $filesize = filesize($file);

@@ -33,7 +33,7 @@
                 <td><?= $val[7] ?></td>
                 <td><?= $val[6] ?></td>
                 <td><?= $val[9] ?></td>
-                <td><img src="/public/img/news/<?= $val[5] ?>" alt="/public/img/news/<?= $val[5] ?>" width="60" height="60"></td>
+                <td><img src="/public/img/upload/news/<?= $val[5] ?>" alt="/public/img/upload/news/<?= $val[5] ?>" width="60" height="60"></td>
                 <td>
                 <a href="/admin/edit-news?id=<?= $val[0] ?>" class="btn btn-success text-white">Edit</a>
                 <a class="btn btn-danger text-white btn-delete-news" ref="<?= $val[0] ?>" style="margin-top:2px;">Delete</a>

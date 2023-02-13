@@ -25,7 +25,7 @@
                 <td><?= $val->id ?></td>
                 <td><?= $val->url ?></td>
                 <td>
-                <img src="/public/img/ads/<?= $val->img ?>" alt="/public/img/ads/<?= $val->img ?>" width="60" height="60">
+                <img src="/public/img/upload/ads/<?= $val->img ?>" alt="/public/img/upload/ads/<?= $val->img ?>" width="60" height="60">
                 </td>
                 <td><?= $val->location ?></td>
                 <td><?= $val->type ?></td>

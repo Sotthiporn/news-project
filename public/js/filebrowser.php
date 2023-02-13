@@ -28,14 +28,14 @@
 include('../../_config_inc.php');
 $BASE_URL=BASE_URL;
 
-$dir =BASE_PATH."public/img/news";
+$dir =BASE_PATH."public/img/upload/news";
 chdir($dir);
 array_multisort(array_map('filemtime', ($files = glob("*.*"))), SORT_DESC, $files);
 foreach($files as $filename)
 {
 ?>	
-	<div class='fichero' data-src="<?php echo $BASE_URL; ?>public/img/news/<?php echo $filename; ?>">
-		<img src="<?php echo $BASE_URL; ?>public/img/news/<?php echo $filename; ?>" />
+	<div class='fichero' data-src="<?php echo $BASE_URL; ?>public/img/upload/news/<?php echo $filename; ?>">
+		<img src="<?php echo $BASE_URL; ?>public/img/upload/news/<?php echo $filename; ?>" />
 	<div class='holdup'></div></div>
 <?php
 }

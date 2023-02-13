@@ -41,7 +41,7 @@
                 <input type="hidden" name="txt-status-val" id="txt-status-val" value="<?= $val->status ?>">
             </div>
             <div><label>Photo</label></div>
-            <div class="form-group img-box" style="background-image: url(/public/img/ads/<?= $val->img ?>);">
+            <div class="form-group img-box" style="background-image: url(/public/img/upload/ads/<?= $val->img ?>);">
                 <input type="file" name="txt-file" id="txt-file">
                 <input type="hidden" name="txt-photo" id="txt-photo" value="<?= $val->img ?>">
             </div>
@@ -113,7 +113,7 @@ $(document).ready(function(){
                 imgBox.append(loading);
                 },
                 success:function(data){
-                imgBox.css({'background-image':'url(/public/img/ads/'+data.imgName+')'});
+                imgBox.css({'background-image':'url(/public/img/upload/ads/'+data.imgName+')'});
                 imgBox.find('.loading-img').remove();
                 eThis.parent().find('#txt-photo').val(data.imgName);
                 }

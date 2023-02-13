@@ -11,7 +11,7 @@
                     <div class="col-xl-12 box">
                         <div class="img-box">
                             <a href="news-detail?id=<?= $vals[0] ?>">
-                                <img src="public/img/news/<?= $vals[5] ?>">
+                                <img src="public/img/upload/news/<?= $vals[5] ?>">
                             </a>
                         </div>
                         <div class="txt-box">
@@ -39,7 +39,7 @@
                     <div class="col-xl-12 col-lg-12 ads-box-news">
                         <div class="img-box">
                             <a href="news-detail?id=<?= $vals->id ?>">
-                                <img src="public/img/news/<?= $vals->img  ?>">
+                                <img src="public/img/upload/news/<?= $vals->img  ?>">
                             </a>
                         </div>
                         <div class="txt-box">

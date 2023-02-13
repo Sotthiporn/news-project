@@ -9,7 +9,7 @@
                   foreach($slide1 as $val){ 
                 ?>
                  <a href="/news-detail?id=<?= $val[5] ?>">
-                  <img src="/../public/img/news/<?= $val[2] ?>">
+                  <img src="/../public/img/upload/news/<?= $val[2] ?>">
                   <a href="/news-list?cate=<?= $val[4] ?>">
                    <div class="text-cate-slide<?= $val[4] ?>"><?= $val[8] ?></div>
                   </a>
@@ -23,7 +23,7 @@
                   foreach($slide2 as $val){ 
                 ?>
               <a href="/news-detail?id=<?= $val[5] ?>">
-                  <img src="/../public/img/news/<?= $val[2] ?>">
+                  <img src="/../public/img/upload/news/<?= $val[2] ?>">
                   <a href="/news-list?cate=<?= $val[4] ?>">
                     <div class="text-cate-slide<?= $val[4] ?>"><?= $val[8] ?></div>
                   </a>
@@ -37,7 +37,7 @@
                   foreach($slide3 as $val){ 
                 ?>
               <a href="/news-detail?id=<?= $val[5] ?>">
-                  <img src="/../public/img/news/<?= $val[2] ?>">
+                  <img src="/../public/img/upload/news/<?= $val[2] ?>">
                   <a href="/news-list?cate=<?= $val[4] ?>">
                     <div class="text-cate-slide<?= $val[4] ?>"><?= $val[8] ?></div>
                   </a>
@@ -51,7 +51,7 @@
                   foreach($slide4 as $val){ 
                 ?>
               <a href="/news-detail?id=<?= $val[5] ?>">
-                  <img src="/../public/img/news/<?= $val[2] ?>">
+                  <img src="/../public/img/upload/news/<?= $val[2] ?>">
                   <a href="/news-list?cate=<?= $val[4] ?>">
                     <div class="text-cate-slide<?= $val[4] ?>"><?= $val[8] ?></div>
                   </a>
@@ -71,7 +71,7 @@
             }else{
               ?>
               <a href="<?= $val->url ?>" target="_blank">
-               <img src="/../public/img/ads/<?= $val->img ?>">
+               <img src="/../public/img/upload/ads/<?= $val->img ?>">
                </a>
           <?php } } ?>
       </div>
@@ -93,7 +93,7 @@
               foreach($news_home as $key => $val){ 
           ?>
         <div class="col-xl-4 box-item">
-        <a href="/news-detail?id=<?= $val->id ?>"><div class="img-box" style="background-image: url(public/img/news/<?= $val->img  ?>)"></div></a>
+        <a href="/news-detail?id=<?= $val->id ?>"><div class="img-box" style="background-image: url(public/img/upload/news/<?= $val->img  ?>)"></div></a>
             <div class="txt-box">
               <h1><?= $val->title ?></h1>
             </div>

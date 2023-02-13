@@ -32,7 +32,7 @@
           foreach ($ads_data as $key => $val) {
             ?>
             <a href="<?= $val->url ?>" target="_blank">
-              <img src="/../public/img/ads/<?= $val->img ?>">
+              <img src="/../public/img/upload/ads/<?= $val->img ?>">
             </a>
             <?php
           }

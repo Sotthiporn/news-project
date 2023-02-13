@@ -77,7 +77,7 @@ $(document).ready(function(){
                 imgBox.append(loading);
                 },
                 success:function(data){
-                imgBox.css({'background-image':'url(/public/img/slide/'+data.imgName+')'});
+                imgBox.css({'background-image':'url(/public/img/upload/slide/'+data.imgName+')'});
                 imgBox.find('.loading-img').remove();
                 eThis.parent().find('#txt-photo').val(data.imgName);
                 }

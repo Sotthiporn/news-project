@@ -27,7 +27,7 @@
                 <td><?= $val[1] ?></td>
                 <td><?= $val[3] ?></td>
                 <td><?= $val[6] ?></td>
-                <td><img src="/public/img/news/<?= $val[2] ?>" alt="/public/img/slide/<?= $val[2] ?>" width="60" height="60"></td>
+                <td><img src="/public/img/upload/news/<?= $val[2] ?>" alt="/public/img/upload/slide/<?= $val[2] ?>" width="60" height="60"></td>
                 <td>
                 <a href="/admin/edit-slide?id=<?= $val[0] ?>" class="btn btn-success text-white">Edit</a>
                 <a class="btn btn-danger text-white btn-delete-slide" ref="<?= $val[0] ?>">Delete</a>
