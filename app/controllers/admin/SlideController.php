@@ -6,7 +6,12 @@ class SlideController
     public function slide()
     {
         //get slide data into tbl
-        $slide_data = App::get('database')->getAll_tbl_multi('tbl_slide.*,tbl_category.name as category_name', 'tbl_slide INNER JOIN tbl_category', 'tbl_slide.cate_id = tbl_category.id', 'tbl_slide.id DESC');
+        $slide_data = App::get('database')->getAll_tbl_multi(
+            'tbl_slide.*,tbl_category.name as category_name,tbl_news.title as news_title',
+            'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id LEFT JOIN tbl_news ON tbl_slide.news_id = tbl_news.id',
+            'tbl_slide.id>0',
+            'tbl_slide.id DESC'
+        );
         return view_admin('slide', ['slide_data' => $slide_data]);
     }
     public function get_add_slide()
@@ -17,7 +22,7 @@ class SlideController
     }
     public function add_slide_data()
     {
-        
+
         $query = "insert into tbl_slide (title,img,od,cate_id,news_id,status) values (?,?,?,?,?,?)";
 
         $insert = App::get('connection')->prepare($query);

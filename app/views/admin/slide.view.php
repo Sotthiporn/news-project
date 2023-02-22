@@ -8,6 +8,7 @@
     <table class="table">
         <tr>
             <thead>
+                <td width="50">News</td>
                 <td>Category</td>
                 <td>Title</td>
                 <td>Order</td>
@@ -21,6 +22,7 @@
         ?>
             <tr>
                 <tbody>
+                    <td><?= mb_substr(strip_tags($val->news_title), 0, 50, "utf-8"); ?>
                     <td><?= $val->category_name ?></td>
                     <td><?= $val->title ?></td>
                     <td><?= $val->od ?></td>
