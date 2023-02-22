@@ -6,11 +6,11 @@
         <h1>Add new advertise</h1>
         <form action="/admin/add-ads-data" method="post" class="upl">
             <div class="form-group">
-                <label>URL</label>
+                <label>URL *</label>
                 <input type="text" class="form-control" name="txt-url" id="txt-url" required>
             </div>
             <div class="form-group">
-                <label>Location</label>
+                <label>Location *</label>
                 <select class="form-control" name="txt-location" id="txt-location" required>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -18,23 +18,23 @@
                 </select>
             </div>
             <div class="form-group">
-                <label>Type</label>
+                <label>Type *</label>
                 <select class="form-control" name="txt-type" id="txt-type" required>
                     <option value="Photo">Photo</option>
                     <option value="Video">Video</option>
                 </select>
             </div>
             <div class="form-group">
-                <label>Status</label>
+                <label>Status *</label>
                 <select class="form-control" name="txt-status" id="txt-status" required>
                     <option value="1">Enable</option>
                     <option value="2">Disable</option>
                 </select>
             </div>
-            <div><label>Photo</label></div>
+            <div><label>Photo *</label></div>
             <div class="form-group img-box">
-                <input type="file" name="txt-file" id="txt-file" required>
-                <input type="hidden" name="txt-photo" id="txt-photo">
+                <input type="file" name="txt-file" id="txt-file">
+                <input type="hidden" name="txt-photo" id="txt-photo" required>
             </div>
             <div style="float: right;">
             <button type="submit" class="btn btn-primary">Add</button>

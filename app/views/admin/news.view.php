@@ -25,7 +25,8 @@
                 <tbody>
                     <td><?= $val->category_name ?></td>
                     <td><?= $val->date_post ?></td>
-                    <td><?= $val->title ?></td>
+                    <td><?= mb_substr(strip_tags($val->title), 0, 50, "utf-8"); ?>
+                    </td>
                     <td><?= $val->location ?></td>
                     <td><?= $val->od ?></td>
                     <td><?= $val->status == 1 ? 'Enabled' : ($val->status == 2 ? 'Disabled' : '') ?></td>

@@ -11,7 +11,7 @@ $current_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
   <meta property="og:title" content="Your Website Title" />
   <meta property="og:description" content="Your description" />
   <meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>RUPP-News 24h</title>

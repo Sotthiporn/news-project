@@ -1,18 +1,34 @@
 <?php
 require 'portal/header.admin.view.php';
 $categoryController = new CategoryController();
-$cate = $categoryController->get_cate_on_form();
+$categoryList = $categoryController->get_cate_on_form();
+
+$newsController = new NewsController();
+$newsList = $newsController->get_news_on_form();
 ?>
 
 <div id="content" class="p-4 p-md-5 pt-5">
     <h1>Add new slide</h1>
     <form action="/admin/add-slide-data" method="post" class="upl">
         <div class="form-group">
-            <label>Category</label>
+            <label>News</label>
+            <select class="form-control" name="txt-news" id="txt-news">
+                <option value="0">---Choose news---</option>
+                <?php
+                foreach ($newsList as $row) {
+                ?>
+                    <option value="<?= $row->id ?>"><?= mb_substr(strip_tags($row->title),0,100,"utf-8"); ?></option>
+                <?php
+                }
+                ?>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Category *</label>
             <select class="form-control" name="txt-cate" id="txt-cate" required>
                 <option value="0">---Choose category---</option>
                 <?php
-                foreach ($cate as $key => $row) {
+                foreach ($categoryList as $row) {
                 ?>
                     <option value="<?= $row->id ?>"><?= $row->name ?></option>
                 <?php
@@ -21,24 +37,24 @@ $cate = $categoryController->get_cate_on_form();
             </select>
         </div>
         <div class="form-group">
-            <label>Title</label>
+            <label>Title *</label>
             <input type="text" class="form-control" name="txt-title" id="txt-title" required>
         </div>
         <div class="form-group">
-            <label>Order</label>
+            <label>Order *</label>
             <input type="text" class="form-control" name="txt-od" id="txt-od" value="<?= isset($slide_data[0]->od) ? $slide_data[0]->od + 1 : 0 ?>" required>
         </div>
         <div class="form-group">
-            <label>Status</label>
+            <label>Status *</label>
             <select class="form-control" name="txt-status" id="txt-status" required>
                 <option value="1">Enable</option>
                 <option value="2">Disable</option>
             </select>
         </div>
-        <div><label>Photo</label></div>
+        <div><label>Photo *</label></div>
         <div class="form-group img-box">
-            <input type="file" name="txt-file" id="txt-file" required>
-            <input type="hidden" name="txt-photo" id="txt-photo">
+            <input type="file" name="txt-file" id="txt-file">
+            <input type="hidden" name="txt-photo" id="txt-photo" required>
         </div>
         <div style="float: right;">
             <button type="submit" class="btn btn-primary">Add</button>

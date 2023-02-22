@@ -1,7 +1,10 @@
 <?php
 require 'portal/header.admin.view.php';
 $categoryController = new CategoryController();
-$cate = $categoryController->get_cate_on_form();
+$categoryList = $categoryController->get_cate_on_form();
+
+$newsController = new NewsController();
+$newsList = $newsController->get_news_on_form();
 ?>
 
 <div id="content" class="p-4 p-md-5 pt-5">
@@ -9,38 +12,50 @@ $cate = $categoryController->get_cate_on_form();
     <form method="post" class="upl">
         <input type="text" class="form-control" name="txt-id" id="txt-id" value="<?= $slide_data[0]->id ?>" hidden>
         <div class="form-group">
-            <label>Category</label>
+            <label>News</label>
+            <select class="form-control" name="txt-news" id="txt-news" required>
+                <option value="0">---Choose news---</option>
+                <?php
+                foreach ($newsList as $row) {
+                ?>
+                    <option value="<?= $row->id ?>" <?= isset($slide_data[0]) && $slide_data[0]->news_id == $row->id ? 'selected' : '' ?>><?= mb_substr(strip_tags($row->title),0,100,"utf-8"); ?></option>
+                <?php
+                }
+                ?>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Category *</label>
             <select class="form-control" name="txt-cate" id="txt-cate" required>
                 <option value="0">---Choose category---</option>
                 <?php
-                foreach ($cate as $key => $row) {
+                foreach ($categoryList as $row) {
                 ?>
                     <option value="<?= $row->id ?>" <?= isset($slide_data[0]) && $slide_data[0]->cate_id == $row->id ? 'selected' : '' ?>><?= $row->name ?></option>
                 <?php
                 }
                 ?>
-                ?>
             </select>
         </div>
         <div class="form-group">
-            <label>Title</label>
+            <label>Title *</label>
             <input type="text" class="form-control" name="txt-title" id="txt-title" value="<?= $slide_data[0]->title ?>" required>
         </div>
         <div class="form-group">
-            <label>Order</label>
+            <label>Order *</label>
             <input type="text" class="form-control" name="txt-od" id="txt-od" value="<?= $slide_data[0]->od ?>" required>
         </div>
         <div class="form-group">
-            <label>Status</label>
+            <label>Status *</label>
             <select class="form-control" name="txt-status" id="txt-status" required>
                 <option value="1" <?= $slide_data[0]->status == 1 ? 'selected' : '' ?>>Enable</option>
                 <option value="2" <?= $slide_data[0]->status == 2 ? 'selected' : '' ?>>Disable</option>
             </select>
         </div>
-        <div><label>Photo</label></div>
+        <div><label>Photo *</label></div>
         <div class="form-group img-box" style="background-image: url(/public/img/upload/slide/<?= $slide_data[0]->photo ?>);">
-            <input type="file" name="txt-file" id="txt-file" required>
-            <input type="hidden" name="txt-photo" id="txt-photo" value="<?= $slide_data[0]->img ?>">
+            <input type="file" name="txt-file" id="txt-file">
+            <input type="hidden" name="txt-photo" id="txt-photo" value="<?= $slide_data[0]->img ?>" required>
         </div>
         <div style="float: right;">
             <button type="submit" class="btn btn-primary btn-edit-slide">Update</button>
@@ -61,6 +76,7 @@ $cate = $categoryController->get_cate_on_form();
             var title = $('#txt-title').val();
             var photo = $('#txt-photo').val();
             var cate = $('#txt-cate').val();
+            var news = $('#txt-news').val();
             var od = $('#txt-od').val();
             var status = $('#txt-status').val();
 
@@ -72,6 +88,7 @@ $cate = $categoryController->get_cate_on_form();
                     photo: photo,
                     od: od,
                     cate_id: cate,
+                    news_id: news,
                     status: status
                 },
                 success: function(result) {

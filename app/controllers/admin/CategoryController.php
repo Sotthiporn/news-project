@@ -68,8 +68,8 @@ class CategoryController {
         echo json_encode(['message' => 'success']);
     }
     public function get_cate_on_form(){
-        //get category id & name into option category on form add
-       $cate_data = App::get('database')->getAll_tbl('tbl_category','id>0','id');
+        //get category id & name into option category on form
+       $cate_data = App::get('database')->getAll_tbl('tbl_category','status=1','id desc');
        return $cate_data;
    }
 }

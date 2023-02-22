@@ -9,7 +9,7 @@
       foreach ($slide1 as $val) {
       ?>
         <a href="/news-detail?id=<?= $val->news_id ?>">
-          <img onerror="this.src='/public/img/default/no_image_found.png'" src="/../public/img/upload/news/<?= $val->photo ?>">
+          <img onerror="this.src='/public/img/default/no_image_found.png'" src="/../public/img/upload/slide/<?= $val->photo ?>">
           <a href="/news-list?cate=<?= $val->cate_id ?>">
             <div class="text-cate-slide<?= $val->cate_id ?>"><?= $val->category_name ?></div>
           </a>
@@ -23,7 +23,7 @@
       foreach ($slide2 as $val) {
       ?>
         <a href="/news-detail?id=<?= $val->news_id ?>">
-          <img onerror="this.src='/public/img/default/no_image_found.png'" src="/../public/img/upload/news/<?= $val->photo ?>">
+          <img onerror="this.src='/public/img/default/no_image_found.png'" src="/../public/img/upload/slide/<?= $val->photo ?>">
           <a href="/news-list?cate=<?= $val->cate_id ?>">
             <div class="text-cate-slide<?= $val->cate_id ?>"><?= $val->category_name ?></div>
           </a>
@@ -37,7 +37,7 @@
       foreach ($slide3 as $val) {
       ?>
         <a href="/news-detail?id=<?= $val->news_id ?>">
-          <img onerror="this.src='/public/img/default/no_image_found.png'" src="/../public/img/upload/news/<?= $val->photo ?>">
+          <img onerror="this.src='/public/img/default/no_image_found.png'" src="/../public/img/upload/slide/<?= $val->photo ?>">
           <a href="/news-list?cate=<?= $val->cate_id ?>">
             <div class="text-cate-slide<?= $val->cate_id ?>"><?= $val->category_name ?></div>
           </a>
@@ -51,7 +51,7 @@
       foreach ($slide4 as $val) {
       ?>
         <a href="/news-detail?id=<?= $val->news_id ?>">
-          <img onerror="this.src='/public/img/default/no_image_found.png'" src="/../public/img/upload/news/<?= $val->photo ?>">
+          <img onerror="this.src='/public/img/default/no_image_found.png'" src="/../public/img/upload/slide/<?= $val->photo ?>">
           <a href="/news-list?cate=<?= $val->cate_id ?>">
             <div class="text-cate-slide<?= $val->cate_id ?>"><?= $val->category_name ?></div>
           </a>

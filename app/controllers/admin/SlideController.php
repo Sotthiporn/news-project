@@ -17,32 +17,27 @@ class SlideController
     }
     public function add_slide_data()
     {
-        $query = "insert into tbl_slide (title,img,od,cate_id,status) values
-        (?,?,?,?,?)";
+        
+        $query = "insert into tbl_slide (title,img,od,cate_id,news_id,status) values (?,?,?,?,?,?)";
 
         $insert = App::get('connection')->prepare($query);
-        $input = $_POST;
-
-        if ($input['txt-cate'] == 0) {
-            return redirect('/admin/add-slide');
-        } else {
-            $insert->execute([
-                $input['txt-title'],
-                $input['txt-photo'],
-                $input['txt-od'],
-                $input['txt-cate'],
-                $input['txt-status']
-            ]);
-            return redirect('/admin/slide');
-        }
+        $insert->execute([
+            $_POST['txt-title'],
+            $_POST['txt-photo'],
+            $_POST['txt-od'],
+            $_POST['txt-cate'],
+            $_POST['txt-news'],
+            $_POST['txt-status']
+        ]);
+        return redirect('/admin/slide');
     }
     public function get_edit_slide()
     {
         //get slide form edit
         $id = $_GET['id'];
         $slide_data = App::get('database')->getAll_tbl('tbl_slide', 'id=' . $id . '', 'id DESC');
-        if(empty($slide_data)){
-            die('There is no id "'.$id.'" in slide data');
+        if (empty($slide_data)) {
+            die('There is no id "' . $id . '" in slide data');
         }
         return view_admin('edit-slide', ['slide_data' => $slide_data]);
     }
@@ -54,9 +49,10 @@ class SlideController
         $photo = $_POST['photo'];
         $od = $_POST['od'];
         $cate_id = $_POST['cate_id'];
+        $news_id = $_POST['news_id'];
         $status = $_POST['status'];
 
-        $query = "update tbl_slide set title = ?, img = ?, od = ?, cate_id = ?,status = ? where id = ?";
+        $query = "update tbl_slide set title = ?, img = ?, od = ?, cate_id = ?, news_id = ?,status = ? where id = ?";
 
         $update = App::get('connection')->prepare($query);
 
@@ -65,6 +61,7 @@ class SlideController
             $photo,
             $od,
             $cate_id,
+            $news_id,
             $status,
             $id
         ]);

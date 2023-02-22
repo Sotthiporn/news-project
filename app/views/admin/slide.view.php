@@ -4,7 +4,7 @@
 <div id="content" class="p-4 p-md-5 pt-5">
     <h2 class="mb-4 title-text">Slide</h2>
 
-    <!-- <a href="/admin/add-slide" class="btn btn-primary text-white">Add New</a><br><br> -->
+    <a href="/admin/add-slide" class="btn btn-primary text-white">Add New</a><br><br>
     <table class="table">
         <tr>
             <thead>

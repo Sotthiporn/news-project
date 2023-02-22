@@ -19,11 +19,8 @@ class NewsController
     {
         $query = "insert into tbl_news (date_post,title,name_link,des,img,od,location,cate_id,status) values
         (?,?,?,?,?,?,?,?,?)";
-        $query2 = "insert into tbl_slide (title,img,od,cate_id,news_id,status) values
-        (?,?,?,?,?,?)";
 
         $insert = App::get('connection')->prepare($query);
-        $insert2 = App::get('connection')->prepare($query2);
 
         $input = $_POST;
         $des = trim($input['txt-des']);
@@ -45,14 +42,6 @@ class NewsController
                 $input['txt-od'],
                 $input['txt-location'],
                 $input['txt-cate'],
-                $input['txt-status']
-            ]);
-            $insert2->execute([
-                $input['txt-title'],
-                $input['txt-photo'],
-                $input['txt-od'],
-                $input['txt-cate'],
-                $input['txt-id'],
                 $input['txt-status']
             ]);
             return redirect('/admin/news');
@@ -112,6 +101,10 @@ class NewsController
         $folderPath = "public/img/upload/news/";
         return Utils::uploadImage($folderPath, $_FILES);
     }
-}
 
-?>
+    public function get_news_on_form(){
+        //get news id & name into option news on form
+       $cate_data = App::get('database')->getAll_tbl('tbl_news','status=1','id desc');
+       return $cate_data;
+   }
+}

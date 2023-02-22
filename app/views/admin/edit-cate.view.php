@@ -7,15 +7,15 @@
         <form  method="post">
             <input type="text" class="form-control" name="txt-id" id="txt-id" value="<?= $cate_data[0]->id ?>" hidden>
             <div class="form-group">
-                <label>Name</label>
+                <label>Name *</label>
                 <input type="text" class="form-control" name="txt-name" id="txt-name" value="<?= $cate_data[0]->name ?>" required>
             </div>
             <div class="form-group">
-                <label>Order</label>
+                <label>Order *</label>
                 <input type="number" min="0" class="form-control" name="txt-od" id="txt-od" value="<?= $cate_data[0]->od ?>" required>
             </div>
             <div class="form-group">
-                <label>Status</label>
+                <label>Status *</label>
                 <select class="form-control" name="txt-status" id="txt-status"  required>
                     <option value="1" <?= $cate_data[0]->status == 1 ? 'selected' : '' ?>>Enable</option>
                     <option value="2" <?= $cate_data[0]->status == 2 ? 'selected' : '' ?>>Disable</option>
