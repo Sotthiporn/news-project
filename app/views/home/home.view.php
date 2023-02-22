@@ -9,7 +9,7 @@
       foreach ($slide1 as $val) {
       ?>
         <a href="<?= empty($val->news_id) ? 'javascript:;' : '/news-detail?id=' .$val->news_id ?>">
-          <img onerror="this.src='/public/img/default/no_image_found.png'" src="/../public/img/upload/slide/<?= $val->photo ?>">
+          <img onerror="this.src='/public/img/default/no_image_found.png'" src="/../public/img/upload/slide/<?= $val->img ?>">
           <a href="<?= empty($val->cate_id) ? 'javascript:;' : '/news-list?cate=' .$val->cate_id ?>">
             <div class="text-cate-slide<?= $val->cate_id ?>"><?= $val->category_name ?></div>
           </a>
@@ -23,7 +23,7 @@
       foreach ($slide2 as $val) {
       ?>
         <a href="<?= empty($val->news_id) ? 'javascript:;' : '/news-detail?id=' .$val->news_id ?>">
-          <img onerror="this.src='/public/img/default/no_image_found.png'" src="/../public/img/upload/slide/<?= $val->photo ?>">
+          <img onerror="this.src='/public/img/default/no_image_found.png'" src="/../public/img/upload/slide/<?= $val->img ?>">
           <a href="<?= empty($val->cate_id) ? 'javascript:;' : '/news-list?cate=' .$val->cate_id ?>">
             <div class="text-cate-slide<?= $val->cate_id ?>"><?= $val->category_name ?></div>
           </a>
@@ -37,7 +37,7 @@
       foreach ($slide3 as $val) {
       ?>
         <a href="<?= empty($val->news_id) ? 'javascript:;' : '/news-detail?id=' .$val->news_id ?>">
-          <img onerror="this.src='/public/img/default/no_image_found.png'" src="/../public/img/upload/slide/<?= $val->photo ?>">
+          <img onerror="this.src='/public/img/default/no_image_found.png'" src="/../public/img/upload/slide/<?= $val->img ?>">
           <a href="<?= empty($val->cate_id) ? 'javascript:;' : '/news-list?cate=' .$val->cate_id ?>">
             <div class="text-cate-slide<?= $val->cate_id ?>"><?= $val->category_name ?></div>
           </a>
@@ -51,7 +51,7 @@
       foreach ($slide4 as $val) {
       ?>
         <a href="<?= empty($val->news_id) ? 'javascript:;' : '/news-detail?id=' .$val->news_id ?>">
-          <img onerror="this.src='/public/img/default/no_image_found.png'" src="/../public/img/upload/slide/<?= $val->photo ?>">
+          <img onerror="this.src='/public/img/default/no_image_found.png'" src="/../public/img/upload/slide/<?= $val->img ?>">
           <a href="<?= empty($val->cate_id) ? 'javascript:;' : '/news-list?cate=' .$val->cate_id ?>">
             <div class="text-cate-slide<?= $val->cate_id ?>"><?= $val->category_name ?></div>
           </a>
@@ -98,7 +98,7 @@
             <div class="img-box" style="background-image: url(public/img/upload/news/<?= $val->img  ?>)"></div>
           </a>
           <div class="txt-box">
-            <h1><?= $val->title ?></h1>
+            <h1><?= mb_substr(strip_tags($val->title), 0, 80, "utf-8"); ?></h1>
           </div>
         </div>
     <?php

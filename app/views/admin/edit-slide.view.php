@@ -53,7 +53,7 @@ $newsList = $newsController->get_news_on_form();
             </select>
         </div>
         <div><label>Photo *</label></div>
-        <div class="form-group img-box" style="background-image: url(/public/img/upload/slide/<?= $slide_data[0]->photo ?>);">
+        <div class="form-group img-box" style="background-image: url(/public/img/upload/slide/<?= $slide_data[0]->img ?>);">
             <input type="file" name="txt-file" id="txt-file">
             <input type="hidden" name="txt-photo" id="txt-photo" value="<?= $slide_data[0]->img ?>" required>
         </div>
@@ -84,6 +84,7 @@ $newsList = $newsController->get_news_on_form();
                 url: "/admin/update-slide?id=" + <?php echo $slide_data[0]->id ?>,
                 type: "POST",
                 data: {
+                    id: id,
                     title: title,
                     photo: photo,
                     od: od,

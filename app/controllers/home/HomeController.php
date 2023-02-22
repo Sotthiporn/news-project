@@ -50,19 +50,19 @@ class HomeController
     public function adsHome()
     {
         //get advertise data into HomePage
-        $ads_data = App::get('database')->getAll_tbl_limit('tbl_ads', 'location=1 && type="Photo"', 'id DESC', '0,1');
+        $ads_data = App::get('database')->getAll_tbl_limit('tbl_ads', 'status=1 && location=1 && type="Photo"', 'id DESC', '0,1');
         return $ads_data;
     }
     public function adsHome2()
     {
         //get advertise data into HomePage
-        $ads_data = App::get('database')->getAll_tbl_limit('tbl_ads', 'location=2', 'id DESC', '0,2');
+        $ads_data = App::get('database')->getAll_tbl_limit('tbl_ads', 'status=1 && location=2', 'id DESC', '0,2');
         return $ads_data;
     }
     public function adsHome3()
     {
         //get advertise data into HomePage
-        $ads_data = App::get('database')->getAll_tbl_limit('tbl_ads', 'location=3', 'id DESC', '0,100');
+        $ads_data = App::get('database')->getAll_tbl_limit('tbl_ads', 'status=1 && location=3', 'id DESC', '0,100');
         return $ads_data;
     }
 
@@ -70,25 +70,45 @@ class HomeController
     public function slideHome()
     {
         //get slide data into HomePage
-        $slide_data = App::get('database')->getAll_tbl_multi('tbl_slide.*,tbl_category.name as category_name', 'tbl_slide INNER JOIN tbl_category', 'tbl_slide.cate_id = tbl_category.id', 'tbl_slide.id DESC LIMIT 0,1');
+        $slide_data = App::get('database')->getAll_tbl_multi(
+            'tbl_slide.*,tbl_category.name as category_name', 
+            'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id', 
+            'tbl_slide.status=1', 
+            'tbl_slide.id DESC LIMIT 0,1'
+        );
         return $slide_data;
     }
     public function slideHome2()
     {
         //get slide data into HomePage
-        $slide_data = App::get('database')->getAll_tbl_multi('tbl_slide.*,tbl_category.name as category_name', 'tbl_slide INNER JOIN tbl_category', 'tbl_slide.cate_id = tbl_category.id', 'tbl_slide.id DESC LIMIT 1,1');
+        $slide_data = App::get('database')->getAll_tbl_multi(
+            'tbl_slide.*,tbl_category.name as category_name', 
+            'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id', 
+            'tbl_slide.status=1', 
+            'tbl_slide.id DESC LIMIT 1,1'
+        );
         return $slide_data;
     }
     public function slideHome3()
     {
         //get slide data into HomePage
-        $slide_data = App::get('database')->getAll_tbl_multi('tbl_slide.*,tbl_category.name as category_name', 'tbl_slide INNER JOIN tbl_category', 'tbl_slide.cate_id = tbl_category.id', 'tbl_slide.id DESC LIMIT 2,1');
+        $slide_data = App::get('database')->getAll_tbl_multi(
+            'tbl_slide.*,tbl_category.name as category_name', 
+            'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id', 
+            'tbl_slide.status=1', 
+            'tbl_slide.id DESC LIMIT 2,1'
+        );
         return $slide_data;
     }
     public function slideHome4()
     {
         //get slide data into HomePage
-        $slide_data = App::get('database')->getAll_tbl_multi('tbl_slide.*,tbl_category.name as category_name', 'tbl_slide INNER JOIN tbl_category', 'tbl_slide.cate_id = tbl_category.id', 'tbl_slide.id DESC LIMIT 3,1');
+        $slide_data = App::get('database')->getAll_tbl_multi(
+            'tbl_slide.*,tbl_category.name as category_name', 
+            'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id', 
+            'tbl_slide.status=1', 
+            'tbl_slide.id DESC LIMIT 3,1'
+        );
         return $slide_data;
     }
 
@@ -100,7 +120,7 @@ class HomeController
             $search = App::get('database')->getAll_tbl_multi(
                 "tbl_news.*,tbl_category.name as category_name",
                 "tbl_news INNER JOIN tbl_category ON tbl_news.cate_id = tbl_category.id",
-                "(tbl_news.title LIKE '%$search_value%' OR tbl_news.des LIKE '%$search_value%' OR tbl_category.name LIKE '%$search_value%') AND location=1",
+                "(tbl_news.title LIKE '%$search_value%' OR tbl_news.des LIKE '%$search_value%' OR tbl_category.name LIKE '%$search_value%') AND tbl_news.location=1 AND tbl_news.status=1",
                 "tbl_news.id DESC"
             );
             return view('search', ['search' => $search]);

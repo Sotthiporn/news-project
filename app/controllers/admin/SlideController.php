@@ -53,7 +53,7 @@ class SlideController
     public function update_slide()
     {
         //update slide data
-        $id = $_GET['id'];
+        $id = $_POST['id'];
         $title = $_POST['title'];
         $photo = $_POST['photo'];
         $od = $_POST['od'];
