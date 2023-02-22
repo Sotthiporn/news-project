@@ -83,7 +83,7 @@ $(document).ready(function(){
                 imgBox.append(loading);
                 },
                 success:function(data){
-                imgBox.css({'background-image':'url(/public/img/upload/news/'+data.imgName+')'});
+                imgBox.css({'background-image':'url(<?php echo $BASE_URL; ?>/public/img/upload/news/'+data.imgName+')'});
                 imgBox.find('.loading-img').remove();
                 eThis.parent().find('#txt-photo').val(data.imgName);
                 }

@@ -23,7 +23,7 @@
                 <tbody>
                     <td><?= $val->url ?></td>
                     <td>
-                        <img src="/public/img/upload/ads/<?= $val->img ?>" alt="<?= $val->img ?>" onerror="this.src='/public/img/default/bg_gallery.png'" width="60" height="60" style="margin-top: -12px;">
+                        <img src="<?php echo $BASE_URL; ?>/public/img/upload/ads/<?= $val->img ?>" alt="<?= $val->img ?>" onerror="this.src='/public/img/default/bg_gallery.png'" width="60" height="60" style="margin-top: -12px;">
                     </td>
                     <td><?= $val->location == 1 ? 'Header Menu' : ($val->location == 2 ? 'Slide Right' : ($val->location == 3 ? 'News Detail' : '')) ?></td>
                     <td><?= $val->type ?></td>

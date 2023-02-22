@@ -29,7 +29,7 @@ $CURRENT_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
   <div class="top-width">
     <div class="top-logo-width">
       <div class="logo col-lg-3 col-md-3 col-sm-3">
-        <a href="/"> <img src="/../public/img/logo/news_logo.png"></a>
+        <a href="/"> <img src="/public/img/logo/news_logo.png"></a>
       </div>
       <div class="top-ads col-lg-12 col-md-9 col-sm-9">
         <?php
@@ -38,7 +38,7 @@ $CURRENT_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
         foreach ($ads_data as $key => $val) {
         ?>
           <a href="<?= $val->url ?>" target="_blank">
-            <img src="/../public/img/upload/ads/<?= $val->img ?>">
+            <img src="<?php echo $BASE_URL; ?>/public/img/upload/ads/<?= $val->img ?>">
           </a>
         <?php
         }

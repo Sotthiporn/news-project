@@ -31,7 +31,7 @@
                     <td><?= $val->od ?></td>
                     <td><?= $val->status == 1 ? 'Enabled' : ($val->status == 2 ? 'Disabled' : '') ?></td>
                     <td>
-                        <img src="/public/img/upload/news/<?= $val->img ?>" alt="<?= $val->img ?>" onerror="this.src='/public/img/default/bg_gallery.png'" width="60" height="60" style="margin-top: -12px;">
+                        <img src="<?php echo $BASE_URL; ?>/public/img/upload/news/<?= $val->img ?>" alt="<?= $val->img ?>" onerror="this.src='/public/img/default/bg_gallery.png'" width="60" height="60" style="margin-top: -12px;">
                     </td>
                     <td>
                         <a href="/admin/edit-news?id=<?= $val->id ?>" class="btn btn-success text-white">Edit</a>
