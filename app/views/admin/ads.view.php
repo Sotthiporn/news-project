@@ -25,7 +25,7 @@
                     <td>
                         <img src="/public/img/upload/ads/<?= $val->img ?>" alt="<?= $val->img ?>" onerror="this.src='/public/img/default/bg_gallery.png'" width="60" height="60" style="margin-top: -12px;">
                     </td>
-                    <td><?= $val->location ?></td>
+                    <td><?= $val->location == 1 ? 'Header Menu' : ($val->location == 2 ? 'Slide Right' : ($val->location == 3 ? 'News Detail' : '')) ?></td>
                     <td><?= $val->type ?></td>
                     <td><?= $val->status == 1 ? 'Enabled' : ($val->status == 2 ? 'Disabled' : '') ?></td>
                     <td>

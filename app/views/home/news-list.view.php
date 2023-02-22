@@ -15,7 +15,7 @@
                          </a>
                    </div>
                    <div class="txt-box">
-                       <a href="news-detail?id=<?= $vals->id ?>"><?= $vals->title ?>
+                       <a href="news-detail?id=<?= $vals->id ?>"><?= mb_substr(strip_tags($vals->title),0,100,"utf-8"); ?>
                        <p style="color: cadetblue;"><i class="fa fa-clock-o" aria-hidden="true"></i>
                            <?php
                             $date = date("Y-m-d", strtotime($vals->date_post));
@@ -43,7 +43,7 @@
                         </a>
                     </div>
                     <div class="txt-box">
-                        <a href="news-detail?id=<?= $vals->id ?>"><?= $vals->title  ?>
+                        <a href="news-detail?id=<?= $vals->id ?>"><?= mb_substr(strip_tags($vals->title),0,50,"utf-8");  ?>
                         </a>
                     </div>
                 </div>

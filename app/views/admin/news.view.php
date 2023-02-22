@@ -27,7 +27,7 @@
                     <td><?= $val->date_post ?></td>
                     <td><?= mb_substr(strip_tags($val->title), 0, 50, "utf-8"); ?>
                     </td>
-                    <td><?= $val->location ?></td>
+                    <td><?= $val->location == 1 ? 'General' : ($val->location == 2 ? 'News by category' : '') ?></td>
                     <td><?= $val->od ?></td>
                     <td><?= $val->status == 1 ? 'Enabled' : ($val->status == 2 ? 'Disabled' : '') ?></td>
                     <td>

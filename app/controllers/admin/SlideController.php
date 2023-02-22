@@ -22,19 +22,23 @@ class SlideController
     }
     public function add_slide_data()
     {
-
         $query = "insert into tbl_slide (title,img,od,cate_id,news_id,status) values (?,?,?,?,?,?)";
 
         $insert = App::get('connection')->prepare($query);
-        $insert->execute([
-            $_POST['txt-title'],
-            $_POST['txt-photo'],
-            $_POST['txt-od'],
-            $_POST['txt-cate'],
-            $_POST['txt-news'],
-            $_POST['txt-status']
-        ]);
-        return redirect('/admin/slide');
+
+        if ($_POST['txt-cate'] == 0) {
+            return redirect('/admin/add-slide');
+        } else {
+            $insert->execute([
+                $_POST['txt-title'],
+                $_POST['txt-photo'],
+                $_POST['txt-od'],
+                $_POST['txt-cate'],
+                $_POST['txt-news'],
+                $_POST['txt-status']
+            ]);
+            return redirect('/admin/slide');
+        }
     }
     public function get_edit_slide()
     {

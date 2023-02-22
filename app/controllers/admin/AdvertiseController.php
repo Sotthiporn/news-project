@@ -16,13 +16,11 @@ class AdvertiseController {
     }
     public function add_ads_data()
     {
-        $query = "insert into tbl_ads (url,img,location,type,status) values
-        (?,?,?,?,?)";
+        $query = "insert into tbl_ads (url,img,location,type,status) values (?,?,?,?,?)";
 
         $insert = App::get('connection')->prepare($query);
 
         $input = $_POST;
-        // var_dump($input);
         $insert->execute([
             $input['txt-url'],
             $input['txt-photo'],

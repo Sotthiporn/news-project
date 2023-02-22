@@ -12,9 +12,9 @@
             <div class="form-group">
                 <label>Location *</label>
                 <select class="form-control" name="txt-location" id="txt-location" required>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
+                    <option value="1">Header Menu</option>
+                    <option value="2">Slide Right</option>
+                    <option value="3">News Detail</option>
                 </select>
             </div>
             <div class="form-group">

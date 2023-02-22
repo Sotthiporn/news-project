@@ -13,27 +13,24 @@ require 'portal/header.admin.view.php';
         <div class="form-group">
             <label>Location *</label>
             <select class="form-control" name="txt-location" id="txt-location" required>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+                <option value="1" <?= $ads_data[0]->location == 1 ? 'selected' : '' ?>>Header Menu</option>
+                <option value="2" <?= $ads_data[0]->location == 2 ? 'selected' : '' ?>>Slide Right</option>
+                <option value="3" <?= $ads_data[0]->location == 3 ? 'selected' : '' ?>>News Detail</option>
             </select>
-            <input type="hidden" name="txt-location-val" id="txt-location-val" value="<?= $ads_data[0]->location ?>">
         </div>
         <div class="form-group">
             <label>Type *</label>
             <select class="form-control" name="txt-type" id="txt-type" required>
-                <option value="Photo">Photo</option>
-                <option value="Video">Video</option>
+                <option value="Photo" <?= $ads_data[0]->type == 'Photo' ? 'selected' : '' ?>>Photo</option>
+                <option value="Video" <?= $ads_data[0]->type == 'Video' ? 'selected' : '' ?>>Video</option>
             </select>
-            <input type="hidden" name="txt-type-val" id="txt-type-val" value="<?= $ads_data[0]->type ?>">
         </div>
         <div class="form-group">
             <label>Status(1=Enable,2=Disable) *</label>
             <select class="form-control" name="txt-status" id="txt-status" required>
-                <option value="1">1</option>
-                <option value="2">2</option>
+                <option value="1" <?= $ads_data[0]->status == 1 ? 'selected' : '' ?>>Enable</option>
+                <option value="2" <?= $ads_data[0]->status == 2 ? 'selected' : '' ?>>Disable</option>
             </select>
-            <input type="hidden" name="txt-status-val" id="txt-status-val" value="<?= $ads_data[0]->status ?>">
         </div>
         <div><label>Photo *</label></div>
         <div class="form-group img-box" style="background-image: url(/public/img/upload/ads/<?= $ads_data[0]->img ?>);">
@@ -53,9 +50,6 @@ require 'portal/header.admin.view.php';
         var body = $('body');
         var photo = $('#txt-photo');
         var imgBox = $('.img-box');
-        var location_val = $('#txt-location-val').val();
-        var type_val = $('#txt-type-val').val();
-        var status_val = $('#txt-status-val').val();
 
         $('.btn-edit-ads').click(function() {
             var id = $('#txt-id').val();
@@ -116,10 +110,6 @@ require 'portal/header.admin.view.php';
                 }
             });
         });
-
-        $('#txt-location').val(location_val);
-        $('#txt-type').val(type_val);
-        $('#txt-status').val(status_val);
 
     });
 </script>

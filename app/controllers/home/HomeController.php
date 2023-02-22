@@ -34,7 +34,7 @@ class HomeController
     {
         $cateIdCondition = '';
         if (isset($_GET['cate'])) {
-            $cateIdCondition = '&& cate_id' . $_GET['cate'];
+            $cateIdCondition = '&& cate_id= ' . $_GET['cate'];
         }
         $news_list2 = App::get('database')->getAll_tbl_limit('tbl_news', 'status=1 && location=2 ' . $cateIdCondition . '', 'od DESC', '0,10');
         return $news_list2;
