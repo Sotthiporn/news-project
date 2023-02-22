@@ -28,9 +28,9 @@ require 'portal/header.view.php';
                                 </div>
                                 <div>
                                     <!-- Facebook -->
-                                    <a :href="https://www.facebook.com/sharer/sharer.php?u=<?= $current_url ?>" onclick="window.open(this.href,'_blank','toolbar=yes,scrollbars=yes,resizable=yes,top=24,left=24,width=550,height=650');return false;" rel="nofollow" class="social-icon social-icon-fb"><i class="fa fa-facebook-f"></i></a>
+                                    <a :href="https://www.facebook.com/sharer/sharer.php?u=<?= $CURRENT_URL ?>" onclick="window.open(this.href,'_blank','toolbar=yes,scrollbars=yes,resizable=yes,top=24,left=24,width=550,height=650');return false;" rel="nofollow" class="social-icon social-icon-fb"><i class="fa fa-facebook-f"></i></a>
                                     <!-- Telegram -->
-                                    <a target="_blank" :href="https://t.me/share/url?url=<?= $current_url ?>&text=<?= $vals->title ?>" class="social-icon social-icon-telegram"><i class="fa fa-telegram"></i>
+                                    <a target="_blank" :href="https://t.me/share/url?url=<?= $CURRENT_URL ?>&text=<?= $vals->title ?>" class="social-icon social-icon-telegram"><i class="fa fa-telegram"></i>
                                     </a>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@ require 'portal/header.view.php';
     <?php ?>
     <div class="row" style="margin-top: 10px;">
         <div class="col-xl-12">
-            <div class="fb-comments" data-href="<?= $base_url ?>" data-width="" data-numposts="5"></div>
+            <div class="fb-comments" data-href="<?= $BASE_URL ?>" data-width="" data-numposts="5"></div>
         </div>
     </div>
 </div>
