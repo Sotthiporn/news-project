@@ -1,7 +1,5 @@
-<?php 
-    require 'portal/header.view.php';
-    include('_config_inc.php');
-    $BASE_URL = BASE_URL;
+<?php
+require 'portal/header.view.php';
 ?>
 
 <!-- news by click -->
@@ -14,17 +12,28 @@
                 ?>
                     <div class="col-xl-12 box">
                         <div class="txt-box">
-                            <h2><?= $vals->title ?></h2>
-                            <div style="float:right;" class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-
-                            <p style="color: cadetblue;"><i class="fa fa-clock-o" aria-hidden="true"></i>
-                                <?php
-                                $date = date("Y-m-d", strtotime($vals->date_post));
-                                $time =  date("H:i", strtotime($vals->date_post));
-                                $class->get_post_date($time, $date);
-                                ?>
-                            </p>
-                            <p><?= $vals->des ?></p>
+                            <div class="txt-box-time">
+                                <div>
+                                    <h2><?= $vals->title ?></h2>
+                                    <p style="color: cadetblue;"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                                        <?php
+                                        $date = date("Y-m-d", strtotime($vals->date_post));
+                                        $time =  date("H:i", strtotime($vals->date_post));
+                                        $homeController->get_post_date($time, $date);
+                                        ?>
+                                    </p>
+                                </div>
+                                <div>
+                                    <!-- Facebook -->
+                                    <a :href="https://www.facebook.com/sharer/sharer.php?u=<?= $current_url ?>" onclick="window.open(this.href,'_blank','toolbar=yes,scrollbars=yes,resizable=yes,top=24,left=24,width=550,height=650');return false;" rel="nofollow" class="social-icon social-icon-fb"><i class="fa fa-facebook-f"></i></a>
+                                    <!-- Telegram -->
+                                    <a target="_blank" :href="https://t.me/share/url?url=<?= $current_url ?>&text=<?= $vals->title ?>" class="social-icon social-icon-telegram"><i class="fa fa-telegram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div>
+                                <p><?= $vals->des ?></p>
+                            </div>
                         </div>
                     </div>
                 <?php } ?>
@@ -33,7 +42,7 @@
         <div class="col-xl-3 col-lg-9 ads-detail-box">
             <div class="row">
                 <?php
-                $ads = $class->adsHome3();
+                $ads = $homeController->adsHome3();
                 foreach ($ads as $key => $row) {
                     if ($row->type == "Video") {
                 ?>
@@ -70,10 +79,10 @@
             </div>
         </div>
     </div>
-<?php ?>
+    <?php ?>
     <div class="row" style="margin-top: 10px;">
         <div class="col-xl-12">
-            <div class="fb-comments" data-href="<?= $BASE_URL ?>news-detail?id=<?= $vals->id ?>" data-numposts="5" data-width=""></div>
+            <div class="fb-comments" data-href="<?= $base_url ?>" data-width="" data-numposts="5"></div>
         </div>
     </div>
 </div>

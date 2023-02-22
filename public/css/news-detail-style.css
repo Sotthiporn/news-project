@@ -1,70 +1,133 @@
-.news-detail-box{
+.news-detail-box {
     box-shadow: 1px 1px 3px 0px grey;
     height: auto;
 }
-.news-detail-box .box{
+
+.news-detail-box .box {
     margin: 10px 0;
 }
-.news-detail-box p img{
-    width: 100%;
-    height: 100%;
-}
-.news-detail-box div picture img{
+
+.news-detail-box p img {
     width: 100%;
     height: 100%;
 }
 
-.news-detail-box .box .txt-box{
+.news-detail-box div picture img {
     width: 100%;
     height: 100%;
-    float: left;
+}
+
+.news-detail-box .box .txt-box {
+    width: 100%;
+    height: 100%;
     margin-top: 20px;
 }
-.news-detail-box .box .txt-box h2{
+
+.news-detail-box .box .txt-box .txt-box-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.news-detail-box .box .txt-box h2 {
     color: black !important;
     font-size: 25px;
     text-decoration: none;
     font-weight: bold;
 }
-.news-detail-box .box .txt-box p{
+
+.news-detail-box .box .txt-box p {
     font-size: 15px;
     color: #222222;
 }
 
-
-.ads-detail-box .ads-box{
+.ads-detail-box .ads-box {
     height: auto;
     float: left;
     margin-bottom: 20px;
 }
-.ads-detail-box .ads-box .img-box{
+
+.ads-detail-box .ads-box .img-box {
     width: 100%;
     height: 100%;
     float: left;
 }
-.ads-detail-box .ads-box .img-box img{
+
+.ads-detail-box .ads-box .img-box img {
     width: 100%;
     height: 100%;
     float: left;
 }
-.ads-detail-box .ads-box .img-box iframe{
+
+.ads-detail-box .ads-box .img-box iframe {
     width: 100%;
     height: 290px;
     float: right;
-    margin-left:15px;
+    margin-left: 15px;
 }
-.ads-detail-box .ads-box-news .txt-box{
+
+.ads-detail-box .ads-box-news .txt-box {
     width: 69%;
     height: 100%;
     float: left;
     margin-left: 1%;
 }
-.ads-detail-box .ads-box-news .txt-box a{
+
+.ads-detail-box .ads-box-news .txt-box a {
     display: block;
     color: black !important;
     font-size: 12px;
     text-decoration: none;
 }
-.ads-detail-box .ads-box-news .txt-box a:hover{
+
+.ads-detail-box .ads-box-news .txt-box a:hover {
     color: cadetblue !important;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e7e7e7;
+    border-radius: 50%;
+    position: relative;
+    font-size: 18px !important;
+    width: 30px !important;
+    height: 30px !important;
+    color: #fff;
+    opacity: 1;
+    cursor: pointer;
+    transition: 0.5s ease-out;
+}
+
+.social-icon.social-icon-fb {
+    text-decoration: none;
+    background: #3b5a9a !important;
+}
+
+.social-icon.social-icon-telegram {
+    text-decoration: none;
+    background: #2aabee!important;
+}
+
+.social-icon:hover,
+.social-icon-fb:hover,
+.social-icon-telegram:hover {
+    background: transparent !important;
+    color: black !important;
+    opacity: 0.85;
+}
+
+.social-icon:before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #fff;
+    transform-origin: 0 bottom 0;
+    transform: scaleY(0);
 }

@@ -38,7 +38,7 @@
           <i class="fa fa-home mr-3"></i> #72, Str 566, Toul kork Commune Phnom Penh 00855
         </p>
         <p>
-          <i class="fa fa-envelope mr-3"></i> rupp_g23_e7_g1@gmail.com</p>
+          <i class="fa fa-envelope mr-3"></i> rupp.news24h@gmail.com</p>
         <p>
           <i class="fa fa-phone mr-3"></i> +855 12 345 6789</p>
       </div>
@@ -48,7 +48,7 @@
       <div class="col-md-7 col-lg-8">
         <p class="text-center text-md-left">© <?php echo date('Y') ?> Copyright:
           <a href="/" class="text-white">
-            <strong> RUPP-News 24h</strong>
+            <strong> RUPP G23 E7 Team1</strong>
           </a>
         </p>
 

@@ -20,7 +20,7 @@
                                     <?php
                                     $date = date("Y-m-d", strtotime($vals->date_post));
                                     $time =  date("H:i:s", strtotime($vals->date_post));
-                                    $class->get_post_date($time, $date);
+                                    $homeController->get_post_date($time, $date);
                                     ?>
                                 </p>
                                 <p><?= mb_substr(strip_tags($vals->des), 0, 100, "utf-8"); ?>...</p>
@@ -33,7 +33,7 @@
         <div class="col-xl-3 col-lg-9 ads-box">
             <div class="row">
                 <?php
-                $news_list2 = $class->news_list2();
+                $news_list2 = $homeController->news_list2();
                 foreach ($news_list2 as $key => $vals) {
                 ?>
                     <div class="col-xl-12 col-lg-12 ads-box-news">

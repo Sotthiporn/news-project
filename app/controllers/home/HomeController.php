@@ -33,7 +33,7 @@ class HomeController
     public function news_list2()
     {
         $cateIdCondition = '';
-        if(isset($_GET['cate'])){
+        if (isset($_GET['cate'])) {
             $cateIdCondition = '&& cate_id' . $_GET['cate'];
         }
         $news_list2 = App::get('database')->getAll_tbl_limit('tbl_news', 'status=1 && location=2 ' . $cateIdCondition . '', 'od DESC', '0,10');
@@ -96,7 +96,7 @@ class HomeController
     public function search_news()
     {
         $search_value = $_GET['search'];
-        if (isset($_GET['btnSearch'])) {
+        if (isset($search_value)) {
             $search = App::get('database')->getAll_tbl_multi(
                 "tbl_news.*,tbl_category.name as category_name",
                 "tbl_news INNER JOIN tbl_category ON tbl_news.cate_id = tbl_category.id",
