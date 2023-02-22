@@ -5,8 +5,7 @@
                 $con = $config['connection'];
                 
                 $pdo = new PDO(
-                    "mysql:host=".$con['host'].";dbname="
-                    .$con['db_name'], 
+                    "mysql:host=".$con['host'].";dbname=".$con['db_name'], 
                     $con['username'],
                     $con['password']
                 );
