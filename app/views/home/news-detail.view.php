@@ -12,9 +12,12 @@ require 'portal/header.view.php';
                 ?>
                     <div class="col-xl-12 box">
                         <div class="txt-box">
+                            <div>
+                                <h2><?= $vals->title ?></h2>
+                            </div>
+
                             <div class="txt-box-time">
                                 <div>
-                                    <h2><?= $vals->title ?></h2>
                                     <p style="color: cadetblue;"><i class="fa fa-clock-o" aria-hidden="true"></i>
                                         <?php
                                         $date = date("Y-m-d", strtotime($vals->date_post));
@@ -31,6 +34,7 @@ require 'portal/header.view.php';
                                     </a>
                                 </div>
                             </div>
+                            
                             <div>
                                 <p><?= $vals->des ?></p>
                             </div>
