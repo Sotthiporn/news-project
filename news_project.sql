@@ -30,6 +30,8 @@ CREATE TABLE `tbl_user`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
+-- Password: 12345678
+INSERT INTO `tbl_user` (`id`, `fullname`, `username`, `password`, `status`) VALUES (1, 'News Admin', 'admin', '$2y$10$6tV6.fo13wTM/RVhDsN1kO8Um.QQQp9l4PfdzSC7GdJDkHSYcPHIy', 1);
 
 -- ----------------------------
 -- Table structure for tbl_ads
