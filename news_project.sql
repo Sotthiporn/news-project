@@ -18,6 +18,20 @@ SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
+-- Table structure for tbl_user
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_user`;
+CREATE TABLE `tbl_user`  (
+  `id` bigint(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `password` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `status` tinyint(3) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+
+
+-- ----------------------------
 -- Table structure for tbl_ads
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_ads`;
