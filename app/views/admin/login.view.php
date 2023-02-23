@@ -1,6 +1,4 @@
 <?php
-session_start();
-session_destroy();
 $BASE_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 ?>
 <!DOCTYPE html>
@@ -30,11 +28,11 @@ $BASE_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : 
                             <h3 class="title">Login to admin panel</h3>
                             <div class="form-group">
                                 <span class="input-icon"><i class="fa fa-user"></i></span>
-                                <input class="form-control" type="text" placeholder="Username">
+                                <input class="form-control" type="text" placeholder="Username" id="txt-name" name="txt-name" required>
                             </div>
                             <div class="form-group">
                                 <span class="input-icon"><i class="fa fa-lock"></i></span>
-                                <input class="form-control" type="password" placeholder="Password">
+                                <input class="form-control" type="password" placeholder="Password" id="txt-password" name="txt-password" required>
                             </div>
                             <button class="btn signin">Login</button>
                         </form>

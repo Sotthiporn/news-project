@@ -2,19 +2,24 @@
 class AuthenticationController {
 
     public function loginPage(){
-        if (isset($_SESSION['is_login'])) {
-            return view_admin('category', []);
+        session_start();
+        if (isset($_SESSION['is_login']) && $_SESSION["is_login"] = true) {
+            redirect('/admin/category');
         }else {
             return view_admin('login', []);
         }
     }
 
     public function doLogin(){
+        session_start();
         $_SESSION["is_login"] = true;
         redirect('/admin/category');
     }
 
     public function logout(){
+        session_start();
+        $_SESSION["is_login"] = false;
+        session_destroy();
         redirect('/admin');
     }
 }
