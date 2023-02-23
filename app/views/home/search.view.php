@@ -10,12 +10,12 @@
                 ?>
                     <div class="col-xl-12 box">
                         <div class="img-box">
-                            <a href="news-detail?id=<?= $vals->id ?>">
-                                <img src="public/img/upload/news/<?= $vals->img ?>">
+                            <a href="<?= $BASE_URL ?>/news-detail?id=<?= $vals->id ?>">
+                                <img src="<?= $BASE_URL ?>/public/img/upload/news/<?= $vals->img ?>">
                             </a>
                         </div>
                         <div class="txt-box">
-                            <a href="news-detail?id=<?= $vals->id ?>"><?= mb_substr(strip_tags($vals->title),0,100,"utf-8"); ?>
+                            <a href="<?= $BASE_URL ?>/news-detail?id=<?= $vals->id ?>"><?= mb_substr(strip_tags($vals->title),0,100,"utf-8"); ?>
                                 <p style="color: cadetblue;"><i class="fa fa-clock-o" aria-hidden="true"></i>
                                     <?php
                                     $date = date("Y-m-d", strtotime($vals->date_post));
@@ -38,12 +38,12 @@
                 ?>
                     <div class="col-xl-12 col-lg-12 ads-box-news">
                         <div class="img-box">
-                            <a href="news-detail?id=<?= $vals->id ?>">
-                                <img src="public/img/upload/news/<?= $vals->img  ?>">
+                            <a href="<?= $BASE_URL ?>/news-detail?id=<?= $vals->id ?>">
+                                <img src="<?= $BASE_URL ?>/public/img/upload/news/<?= $vals->img  ?>">
                             </a>
                         </div>
                         <div class="txt-box">
-                            <a href="news-detail?id=<?= $vals->id ?>"><?= $vals->title  ?>
+                            <a href="<?= $BASE_URL ?>/news-detail?id=<?= $vals->id ?>"><?= $vals->title  ?>
                             </a>
                         </div>
                     </div>

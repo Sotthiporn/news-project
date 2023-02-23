@@ -61,7 +61,7 @@ require 'portal/header.view.php';
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ads-box">
                             <div class="img-box">
                                 <a href="<?= $row->url ?>" target="_blank">
-                                    <img src="public/img/upload/ads/<?= $row->img; ?>">
+                                    <img src="<?= $BASE_URL ?>/public/img/upload/ads/<?= $row->img; ?>">
                                 </a>
                             </div>
                         </div>

@@ -1,19 +1,15 @@
-(function($) {
+$(document).ready(function() {
+    var fullHeight = function() {
 
-	"use strict";
+        $('.js-fullheight').css('height', $(window).height());
+        $(window).resize(function() {
+            $('.js-fullheight').css('height', $(window).height());
+        });
 
-	var fullHeight = function() {
+    };
+    fullHeight();
 
-		$('.js-fullheight').css('height', $(window).height());
-		$(window).resize(function(){
-			$('.js-fullheight').css('height', $(window).height());
-		});
-
-	};
-	fullHeight();
-
-	$('#sidebarCollapse').on('click', function () {
-      $('#sidebar').toggleClass('active');
-  });
-
-})(jQuery);
+    $('#sidebarCollapse').on('click', function() {
+        $('#sidebar').toggleClass('active');
+    });
+});

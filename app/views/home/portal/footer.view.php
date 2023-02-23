@@ -12,7 +12,7 @@
             foreach ($cate as $key => $val) {
         ?>
                 <p>
-                <a href="/news-list?cate=<?= $val->id ?>" class="text-white"><?= $val->name ?></a>
+                <a href="/<?= $BASE_URL ?>/news-list?cate=<?= $val->id ?>" class="text-white"><?= $val->name ?></a>
                 </p>
             <?php
             }
@@ -47,7 +47,7 @@
     <div class="row d-flex align-items-center">
       <div class="col-md-7 col-lg-8">
         <p class="text-center text-md-left">© <?php echo date('Y') ?> Copyright:
-          <a href="/" class="text-white">
+          <a href="<?= $BASE_URL ?>/" class="text-white">
             <strong> RUPP G23 E7 Team1</strong>
           </a>
         </p>
@@ -85,8 +85,8 @@
 </footer>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0" nonce="EWKN3QaE"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="public/style/bootstrap-4.5.0/js/bootstrap.min.js"></script>
-<script src="public/js/news-list-action.js"></script>
+<script src="<?= $BASE_URL ?>/public/style/bootstrap-4.5.0/js/bootstrap.min.js"></script>
+<script src="<?= $BASE_URL ?>/public/js/home-main.js"></script>
 <script>(function(d, s, id) {
 var js, fjs = d.getElementsByTagName(s)[0];
 if (d.getElementById(id)) return;
