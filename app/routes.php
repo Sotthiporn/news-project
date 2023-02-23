@@ -7,7 +7,7 @@
 //authentication
 $router->get("admin","AuthenticationController@loginPage");
 $router->get("admin/login","AuthenticationController@loginPage");
-$router->get("admin/do_login","AuthenticationController@doLogin");
+$router->post("admin/do_login","AuthenticationController@doLogin");
 $router->get("admin/logout","AuthenticationController@logout");
 
 //category

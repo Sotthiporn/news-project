@@ -1,8 +1,7 @@
 <?php
-// session_start();
-// if (!isset($_SESSION['is_login'])) {
-// 	redirect('/admin/login');
-// }
+if (!isset($_SESSION['is_login'])) {
+	redirect('/admin');
+}
 
 $BASE_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 ?>
