@@ -7,7 +7,7 @@ if (!isset($_SESSION['is_login'])) {
 $BASE_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 ?>
 <!DOCTYPE html>
-<html">
+<html>
 
 <head>
 	<meta charset="UTF-8">
@@ -31,7 +31,7 @@ $BASE_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : 
 				</button>
 			</div>
 			<div class="p-4 menu">
-				<h1><a href="<?= $BASE_URL ?>/admin" class="logo">RUPP <span> News 24h</span></a></h1>
+				<h1><a href="<?= $BASE_URL ?>/admin" class="logo">RUPP <span> News 24h - Admin</span></a></h1>
 				<ul class="list-unstyled components mb-5">
 					<li>
 						<a href="<?= $BASE_URL ?>/admin/category"><span class="fa fa-bars mr-3"></span> Category</a>
