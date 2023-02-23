@@ -125,7 +125,7 @@ class HomeController
             );
             return view('search', ['search' => $search]);
         } else {
-            header('Location: /');
+           redirect('/');
         }
     }
 

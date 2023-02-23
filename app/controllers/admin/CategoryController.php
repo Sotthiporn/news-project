@@ -5,7 +5,7 @@ class CategoryController {
     public function index(){
         //get category data into tbl
         $cate_data = App::get('database')->getAll_tbl('tbl_category','id>0','id DESC');
-        return view_admin('admin', ['cate_data' => $cate_data]);   
+        return view_admin('category', ['cate_data' => $cate_data]);   
     }
     public function get_add_cate(){
          //get category auto id and form add
@@ -25,7 +25,7 @@ class CategoryController {
             $input['txt-status']
         ]);
 
-        return redirect('/admin');
+        return redirect('/admin/category');
     }
     public function get_edit_cate(){
         //get category form edit

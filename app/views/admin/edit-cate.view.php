@@ -45,7 +45,7 @@ $(document).ready(function(){
                 var message = JSON.parse(result);
                 if(message.message == "updated_success"){
                     alert("Your data has been updated!");
-                    window.location.href = "/admin";
+                    window.location.href = "/admin/category";
                 }else{
                     alert("somthing went wrong please try again later!");
                 }

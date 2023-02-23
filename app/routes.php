@@ -4,8 +4,14 @@
  * Admin Block
  */
 
+//authentication
+$router->get("admin","AuthenticationController@loginPage");
+$router->get("admin/login","AuthenticationController@loginPage");
+$router->get("admin/do_login","AuthenticationController@doLogin");
+$router->get("admin/logout","AuthenticationController@logout");
+
 //category
-$router->get("admin","CategoryController@index");
+$router->get("admin/category","CategoryController@index");
 $router->get("admin/add-cate","CategoryController@get_add_cate");
 $router->get("admin/edit-cate","CategoryController@get_edit_cate");
 $router->post("admin/add-cate-data","CategoryController@add_cate_data");
