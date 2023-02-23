@@ -4,7 +4,7 @@ class AuthenticationController {
     public function loginPage(){
         session_start();
         if (isset($_SESSION['is_login']) && $_SESSION["is_login"] = true) {
-            redirect('/admin/category');
+            return redirect('/admin/category');
         }else {
             return view_admin('login', []);
         }
@@ -16,13 +16,13 @@ class AuthenticationController {
         
         session_start();
         $_SESSION["is_login"] = true;
-        redirect('/admin/category');
+        return redirect('/admin/category');
     }
 
     public function logout(){
         session_start();
-        $_SESSION["is_login"] = false;
+        unset($_SESSION["is_login"]);
         session_destroy();
-        redirect('/admin');
+        return redirect('/admin');
     }
 }
