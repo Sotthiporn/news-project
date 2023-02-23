@@ -14,11 +14,11 @@ $BASE_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>RUPP News-Admin</title>
-	<link rel="icon" href="public/img/logo/news_logo.png">
+	<link rel="icon" href="<?= $BASE_URL ?>/public/img/logo/news_logo.png">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-	<link rel="stylesheet" href="/public/style/font-awesome-4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="/public/style/bootstrap-4.5.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/public/css/admin-style.css">
+	<link rel="stylesheet" href="<?= $BASE_URL ?>/public/style/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?= $BASE_URL ?>/public/style/bootstrap-4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?= $BASE_URL ?>/public/css/admin-style.css">
 </head>
 
 <body>
@@ -31,22 +31,22 @@ $BASE_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : 
 				</button>
 			</div>
 			<div class="p-4 menu">
-				<h1><a href="/admin" class="logo">RUPP <span> News 24h</span></a></h1>
+				<h1><a href="<?= $BASE_URL ?>/admin" class="logo">RUPP <span> News 24h</span></a></h1>
 				<ul class="list-unstyled components mb-5">
 					<li>
-						<a href="/admin"><span class="fa fa-bars mr-3"></span> Category</a>
+						<a href="<?= $BASE_URL ?>/admin/category"><span class="fa fa-bars mr-3"></span> Category</a>
 					</li>
 					<li>
-						<a href="/admin/news"><span class="fa fa-newspaper-o mr-3"></span> News</a>
+						<a href="<?= $BASE_URL ?>/admin/news"><span class="fa fa-newspaper-o mr-3"></span> News</a>
 					</li>
 					<li>
-						<a href="/admin/slide"><span class="fa fa-window-restore mr-3"></span> Slide</a>
+						<a href="<?= $BASE_URL ?>/admin/slide"><span class="fa fa-window-restore mr-3"></span> Slide</a>
 					</li>
 					<li>
-						<a href="/admin/ads"><span class="fa fa-bar-chart mr-3"></span> Advertise</a>
+						<a href="<?= $BASE_URL ?>/admin/ads"><span class="fa fa-bar-chart mr-3"></span> Advertise</a>
 					</li>
 					<li>
-						<a href="/admin/logout"><span class="fa fa-sign-out mr-3"></span> Logout</a>
+						<a href="<?= $BASE_URL ?>/admin/logout"><span class="fa fa-sign-out mr-3"></span> Logout</a>
 					</li>
 				</ul>
 
@@ -56,7 +56,7 @@ $BASE_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : 
 							document.write(new Date().getFullYear());
 						</script> All rights reserved |
 						<i class="icon-heart" aria-hidden="true"></i>
-						<a href="/" target="_blank" class="text-white">RUPP-News24h.com</a>
+						<a href="<?= $BASE_URL ?>/" target="_blank" class="text-white">RUPP G23 E7 Team1</a>
 					</p>
 				</div>
 

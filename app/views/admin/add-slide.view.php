@@ -9,7 +9,7 @@ $newsList = $newsController->get_news_on_form();
 
 <div id="content" class="p-4 p-md-5 pt-5">
     <h1>Add new slide</h1>
-    <form action="/admin/add-slide-data" method="post" class="upl">
+    <form action="<?= $BASE_URL ?>/admin/add-slide-data" method="post" class="upl">
         <div class="form-group">
             <label>News</label>
             <select class="form-control" name="txt-news" id="txt-news">
@@ -58,7 +58,7 @@ $newsList = $newsController->get_news_on_form();
         </div>
         <div style="float: right;">
             <button type="submit" class="btn btn-primary">Add</button>
-            <a href="/admin/slide"><button type="button" class="btn btn-danger">Cancel</button></a>
+            <a href="<?= $BASE_URL ?>/admin/slide"><button type="button" class="btn btn-danger">Cancel</button></a>
         </div>
     </form>
 </div>
@@ -77,7 +77,7 @@ $newsList = $newsController->get_news_on_form();
             var frm = eThis.closest('form.upl');
             var frm_data = new FormData(frm[0]);
             $.ajax({
-                url: '/admin/upl-img-slide',
+                url: '<?= $BASE_URL ?>/admin/upl-img-slide',
                 type: 'POST',
                 data: frm_data,
                 contentType: false,
@@ -89,7 +89,7 @@ $newsList = $newsController->get_news_on_form();
                 },
                 success: function(data) {
                     imgBox.css({
-                        'background-image': 'url(<?php echo $BASE_URL; ?>/public/img/upload/slide/' + data.imgName + ')'
+                        'background-image': 'url(<?= $BASE_URL ?>/public/img/upload/slide/' + data.imgName + ')'
                     });
                     imgBox.find('.loading-img').remove();
                     eThis.parent().find('#txt-photo').val(data.imgName);

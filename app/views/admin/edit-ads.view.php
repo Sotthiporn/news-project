@@ -39,7 +39,7 @@ require 'portal/header.admin.view.php';
         </div>
         <div style="float: right;">
             <button type="submit" class="btn btn-primary btn-edit-ads">Update</button>
-            <a href="/admin/ads"><button type="button" class="btn btn-danger">Cancel</button></a>
+            <a href="<?= $BASE_URL ?>/admin/ads"><button type="button" class="btn btn-danger">Cancel</button></a>
         </div>
     </form>
 </div>
@@ -60,7 +60,7 @@ require 'portal/header.admin.view.php';
             var status = $('#txt-status').val();
 
             $.ajax({
-                url: "/admin/update-ads?id=" + <?php echo $ads_data[0]->id ?>,
+                url: "<?= $BASE_URL ?>/admin/update-ads?id=" + <?php echo $ads_data[0]->id ?>,
                 type: "POST",
                 data: {
                     url: url,
@@ -91,7 +91,7 @@ require 'portal/header.admin.view.php';
             var frm = eThis.closest('form.upl');
             var frm_data = new FormData(frm[0]);
             $.ajax({
-                url: '/admin/upl-img-ads',
+                url: '<?= $BASE_URL ?>/admin/upl-img-ads',
                 type: 'POST',
                 data: frm_data,
                 contentType: false,
@@ -103,7 +103,7 @@ require 'portal/header.admin.view.php';
                 },
                 success: function(data) {
                     imgBox.css({
-                        'background-image': 'url(<?php echo $BASE_URL; ?>/public/img/upload/ads/' + data.imgName + ')'
+                        'background-image': 'url(<?= $BASE_URL ?>/public/img/upload/ads/' + data.imgName + ')'
                     });
                     imgBox.find('.loading-img').remove();
                     eThis.parent().find('#txt-photo').val(data.imgName);

@@ -6,7 +6,7 @@
     
     <div id="content" class="p-4 p-md-5 pt-5">
         <h1>Add new News</h1>
-        <form action="/admin/add-news-data" method="post" class="upl">
+        <form action="<?= $BASE_URL ?>/admin/add-news-data" method="post" class="upl">
             <div class="form-group">
                 <label>Category *</label>
                 <select class="form-control" name="txt-cate" id="txt-cate" required>
@@ -53,7 +53,7 @@
             </div>
             <div style="float: right;">
             <button type="submit" class="btn btn-primary">Add</button>
-            <a href="/admin/news"><button type="button" class="btn btn-danger">Cancel</button></a>
+            <a href="<?= $BASE_URL ?>/admin/news"><button type="button" class="btn btn-danger">Cancel</button></a>
             </div>
         </form>
     </div>
@@ -72,7 +72,7 @@ $(document).ready(function(){
             var frm = eThis.closest('form.upl');
             var frm_data= new FormData(frm[0]);
             $.ajax({
-                url:'/admin/upl-img-news',
+                url:'<?= $BASE_URL ?>/admin/upl-img-news',
                 type:'POST',
                 data:frm_data,
                 contentType:false,
@@ -83,7 +83,7 @@ $(document).ready(function(){
                 imgBox.append(loading);
                 },
                 success:function(data){
-                imgBox.css({'background-image':'url(<?php echo $BASE_URL; ?>/public/img/upload/news/'+data.imgName+')'});
+                imgBox.css({'background-image':'url(<?= $BASE_URL ?>/public/img/upload/news/'+data.imgName+')'});
                 imgBox.find('.loading-img').remove();
                 eThis.parent().find('#txt-photo').val(data.imgName);
                 }
@@ -97,7 +97,7 @@ $(document).ready(function(){
       tinymce.remove();
       tinymce.init({selector:"textarea",theme: "modern",width: "760",height:"300",relative_urls: false, remove_script_host: false,
       file_browser_callback:function(field_name, url, type, win){
-      var filebrowser = "/public/js/filebrowser.php";
+      var filebrowser = "<?= $BASE_URL ?>/public/js/filebrowser.php";
       filebrowser += (filebrowser.indexOf("?") < 0) ? "?type=" + type : "&type=" + type;
       tinymce.activeEditor.windowManager.open({
       title : "Insert Photo",

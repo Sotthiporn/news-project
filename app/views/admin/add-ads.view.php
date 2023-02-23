@@ -4,7 +4,7 @@
     
     <div id="content" class="p-4 p-md-5 pt-5">
         <h1>Add new advertise</h1>
-        <form action="/admin/add-ads-data" method="post" class="upl">
+        <form action="<?= $BASE_URL ?>/admin/add-ads-data" method="post" class="upl">
             <div class="form-group">
                 <label>URL *</label>
                 <input type="text" class="form-control" name="txt-url" id="txt-url" required>
@@ -38,7 +38,7 @@
             </div>
             <div style="float: right;">
             <button type="submit" class="btn btn-primary">Add</button>
-            <a href="/admin/ads"><button type="button" class="btn btn-danger">Cancel</button></a>
+            <a href="<?= $BASE_URL ?>/admin/ads"><button type="button" class="btn btn-danger">Cancel</button></a>
             </div>
         </form>
     </div>
@@ -57,7 +57,7 @@ $(document).ready(function(){
             var frm = eThis.closest('form.upl');
             var frm_data= new FormData(frm[0]);
             $.ajax({
-                url:'/admin/upl-img-ads',
+                url:'<?= $BASE_URL ?>/admin/upl-img-ads',
                 type:'POST',
                 data:frm_data,
                 contentType:false,
@@ -68,7 +68,7 @@ $(document).ready(function(){
                 imgBox.append(loading);
                 },
                 success:function(data){
-                imgBox.css({'background-image':'url(<?php echo $BASE_URL; ?>/public/img/upload/ads/'+data.imgName+')'});
+                imgBox.css({'background-image':'url(<?= $BASE_URL ?>/public/img/upload/ads/'+data.imgName+')'});
                 imgBox.find('.loading-img').remove();
                 eThis.parent().find('#txt-photo').val(data.imgName);
                 }

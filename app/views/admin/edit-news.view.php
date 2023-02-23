@@ -6,7 +6,7 @@ $cate = $categoryController->get_cate_on_form();
 
 <div id="content" class="p-4 p-md-5 pt-5">
     <h1>Edit News</h1>
-    <form action="/admin/update-news?id=<?= $news_data[0]->id ?>" method="post" class="upl">
+    <form action="<?= $BASE_URL ?>/admin/update-news?id=<?= $news_data[0]->id ?>" method="post" class="upl">
         <input type="text" class="form-control" name="txt-id" id="txt-id" value="<?= $news_data[0]->id ?>" hidden>
         <div class="form-group">
             <label>Category *</label>
@@ -48,13 +48,13 @@ $cate = $categoryController->get_cate_on_form();
             </select>
         </div>
         <div><label>Photo *</label></div>
-        <div class="form-group img-box" style="background-image: url(<?php echo $BASE_URL; ?>/public/img/upload/news/<?= $news_data[0]->img ?>);">
+        <div class="form-group img-box" style="background-image: url(<?= $BASE_URL ?>/public/img/upload/news/<?= $news_data[0]->img ?>);">
             <input type="file" name="txt-file" id="txt-file">
             <input type="hidden" name="txt-photo" id="txt-photo" value="<?= $news_data[0]->img ?>" required>
         </div>
         <div style="float: right;">
             <button type="submit" class="btn btn-primary btn-edit-news">Update</button>
-            <a href="/admin/news"><button type="button" class="btn btn-danger">Cancel</button></a>
+            <a href="<?= $BASE_URL ?>/admin/news"><button type="button" class="btn btn-danger">Cancel</button></a>
         </div>
     </form>
 </div>
@@ -73,7 +73,7 @@ $cate = $categoryController->get_cate_on_form();
             var frm = eThis.closest('form.upl');
             var frm_data = new FormData(frm[0]);
             $.ajax({
-                url: '/admin/upl-img-news',
+                url: '<?= $BASE_URL ?>/admin/upl-img-news',
                 type: 'POST',
                 data: frm_data,
                 contentType: false,
@@ -85,7 +85,7 @@ $cate = $categoryController->get_cate_on_form();
                 },
                 success: function(data) {
                     imgBox.css({
-                        'background-image': 'url(<?php echo $BASE_URL; ?>/public/img/upload/news/' + data.imgName + ')'
+                        'background-image': 'url(<?= $BASE_URL ?>/public/img/upload/news/' + data.imgName + ')'
                     });
                     imgBox.find('.loading-img').remove();
                     eThis.parent().find('#txt-photo').val(data.imgName);
@@ -107,7 +107,7 @@ $cate = $categoryController->get_cate_on_form();
                 relative_urls: false,
                 remove_script_host: false,
                 file_browser_callback: function(field_name, url, type, win) {
-                    var filebrowser = "/public/js/filebrowser.php";
+                    var filebrowser = "<?= $BASE_URL ?>/public/js/filebrowser.php";
                     filebrowser += (filebrowser.indexOf("?") < 0) ? "?type=" + type : "&type=" + type;
                     tinymce.activeEditor.windowManager.open({
                         title: "Insert Photo",

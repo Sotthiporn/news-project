@@ -3,7 +3,7 @@
 ?>  
     <div id="content" class="p-4 p-md-5 pt-5">
         <h1>Add new category</h1>
-        <form action="/admin/add-cate-data" method="post">
+        <form action="<?= $BASE_URL ?>/admin/add-cate-data" method="post">
             <div class="form-group">
                 <label>Name *</label>
                 <input type="text" class="form-control" name="txt-name" id="txt-name" required>
@@ -20,7 +20,7 @@
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Add</button>
-            <a href="/admin"><button type="button" class="btn btn-danger">Cancel</button></a>
+            <a href="<?= $BASE_URL ?>/admin/category"><button type="button" class="btn btn-danger">Cancel</button></a>
         </form>
     </div>
 <?php require 'portal/footer.admin.view.php';  ?>

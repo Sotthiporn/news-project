@@ -4,7 +4,7 @@
       <div id="content" class="p-4 p-md-5 pt-5">
         <h2 class="mb-4 title-text">Category</h2>
     
-	<a href="admin/add-cate" class="btn btn-primary text-white">Add New</a><br><br>
+	<a href="<?= $BASE_URL ?>/admin/add-cate" class="btn btn-primary text-white">Add New</a><br><br>
     <table class="table">
         <tr>
             <thead>
@@ -23,7 +23,7 @@
                 <td><?= $val->od ?></td>
                 <td><?= $val->status == 1 ? 'Enabled' : ($val->status == 2 ? 'Disabled' : '') ?></td>
                 <td>
-                <a href="admin/edit-cate?id=<?= $val->id ?>" class="btn btn-success text-white">Edit</a>
+                <a href="<?= $BASE_URL ?>/admin/edit-cate?id=<?= $val->id ?>" class="btn btn-success text-white">Edit</a>
                 <a class="btn btn-danger text-white btn-delete-cate" ref="<?= $val->id ?>">Delete</a>
                 </td>
             </tbody>
@@ -43,7 +43,7 @@ $(document).ready(function(){
             var id = $(this).attr('ref');
 
                 $.ajax({
-                url: "/admin/delete-cate?id=" + id,
+                url: "<?= $BASE_URL ?>/admin/delete-cate?id=" + id,
                 type: "GET",
                 success: function(result){
                     var message = JSON.parse(result);

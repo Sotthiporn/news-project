@@ -4,7 +4,7 @@
 <div id="content" class="p-4 p-md-5 pt-5">
     <h2 class="mb-4 title-text">Slide</h2>
 
-    <a href="/admin/add-slide" class="btn btn-primary text-white">Add New</a><br><br>
+    <a href="<?= $BASE_URL ?>/admin/add-slide" class="btn btn-primary text-white">Add New</a><br><br>
     <table class="table">
         <tr>
             <thead>
@@ -28,10 +28,10 @@
                     <td><?= $val->od ?></td>
                     <td><?= $val->status == 1 ? 'Enabled' : ($val->status == 2 ? 'Disabled' : '') ?></td>
                     <td>
-                        <img src="<?php echo $BASE_URL; ?>/public/img/upload/slide/<?= $val->img ?>" alt="<?= $val->img ?>" onerror="this.src='/public/img/default/bg_gallery.png'" width="60" height="60" style="margin-top: -12px;">
+                        <img src="<?= $BASE_URL ?>/public/img/upload/slide/<?= $val->img ?>" alt="<?= $val->img ?>" onerror="this.src='/public/img/default/bg_gallery.png'" width="60" height="60" style="margin-top: -12px;">
                     </td>
                     <td>
-                        <a href="/admin/edit-slide?id=<?= $val->id ?>" class="btn btn-success text-white">Edit</a>
+                        <a href="<?= $BASE_URL ?>/admin/edit-slide?id=<?= $val->id ?>" class="btn btn-success text-white">Edit</a>
                         <a class="btn btn-danger text-white btn-delete-slide" ref="<?= $val->id ?>">Delete</a>
                     </td>
                 </tbody>
@@ -51,7 +51,7 @@
                 var id = $(this).attr('ref');
 
                 $.ajax({
-                    url: "/admin/delete-slide?id=" + id,
+                    url: "<?= $BASE_URL ?>/admin/delete-slide?id=" + id,
                     type: "GET",
                     success: function(result) {
                         var message = JSON.parse(result);

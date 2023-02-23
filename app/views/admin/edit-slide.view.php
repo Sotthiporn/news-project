@@ -59,7 +59,7 @@ $newsList = $newsController->get_news_on_form();
         </div>
         <div style="float: right;">
             <button type="submit" class="btn btn-primary btn-edit-slide">Update</button>
-            <a href="/admin/slide"><button type="button" class="btn btn-danger">Cancel</button></a>
+            <a href="<?= $BASE_URL ?>/admin/slide"><button type="button" class="btn btn-danger">Cancel</button></a>
         </div>
     </form>
 </div>
@@ -81,7 +81,7 @@ $newsList = $newsController->get_news_on_form();
             var status = $('#txt-status').val();
 
             $.ajax({
-                url: "/admin/update-slide?id=" + <?php echo $slide_data[0]->id ?>,
+                url: "<?= $BASE_URL ?>/admin/update-slide?id=" + <?php echo $slide_data[0]->id ?>,
                 type: "POST",
                 data: {
                     id: id,
@@ -96,7 +96,7 @@ $newsList = $newsController->get_news_on_form();
                     var message = JSON.parse(result);
                     if (message.message == "updated_success") {
                         alert("Your data has been updated!");
-                        window.location.href = "/admin/slide";
+                        window.location.href = "<?= $BASE_URL ?>/admin/slide";
                     } else {
                         alert("somthing went wrong please try again later!");
                     }
@@ -114,7 +114,7 @@ $newsList = $newsController->get_news_on_form();
             var frm = eThis.closest('form.upl');
             var frm_data = new FormData(frm[0]);
             $.ajax({
-                url: '/admin/upl-img-slide',
+                url: '<?= $BASE_URL ?>/admin/upl-img-slide',
                 type: 'POST',
                 data: frm_data,
                 contentType: false,
@@ -126,7 +126,7 @@ $newsList = $newsController->get_news_on_form();
                 },
                 success: function(data) {
                     imgBox.css({
-                        'background-image': 'url(<?php echo $BASE_URL; ?>/public/img/upload/slide/' + data.imgName + ')'
+                        'background-image': 'url(<?= $BASE_URL ?>/public/img/upload/slide/' + data.imgName + ')'
                     });
                     imgBox.find('.loading-img').remove();
                     eThis.parent().find('#txt-photo').val(data.imgName);

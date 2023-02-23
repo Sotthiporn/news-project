@@ -22,7 +22,7 @@
                 </select>
             </div>
             <button type="button" class="btn btn-primary" id="btn-edit-cate">Update</button>
-            <a href="/admin"><button type="button" class="btn btn-danger">Cancel</button></a>
+            <a href="<?= $BASE_URL ?>/admin/category"><button type="button" class="btn btn-danger">Cancel</button></a>
         </form>
     </div>
 
@@ -38,14 +38,14 @@ $(document).ready(function(){
         var status = $('#txt-status').val();
         
         $.ajax({
-            url: "/admin/update-cate?id=" + <?php echo $cate_data[0]->id ?>,
+            url: "<?= $BASE_URL ?>/admin/update-cate?id=" + <?php echo $cate_data[0]->id ?>,
             type: "POST",
             data: {name:name,od:od,status:status},
             success:function(result){
                 var message = JSON.parse(result);
                 if(message.message == "updated_success"){
                     alert("Your data has been updated!");
-                    window.location.href = "/admin/category";
+                    window.location.href = "<?= $BASE_URL ?>/admin/category";
                 }else{
                     alert("somthing went wrong please try again later!");
                 }
