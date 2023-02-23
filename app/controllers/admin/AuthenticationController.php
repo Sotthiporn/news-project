@@ -17,7 +17,7 @@ class AuthenticationController
         session_start();
         $username = $_POST['txt-username'];
         $password = $_POST['txt-password'];
-        $user_data = App::get('database')->getAll_tbl_limit('tbl_user', 'username = "'.$username.'"', 'id DESC', '1');
+        $user_data = App::get('database')->getAll_tbl_limit('tbl_user', 'username = "'.$username.'" and status = 1', 'id DESC', '1');
         if (!empty($user_data)) {
             if (password_verify($password, $user_data[0]->password)) {
                 $_SESSION["is_login"] = true;
