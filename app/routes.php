@@ -10,6 +10,14 @@ $router->get("admin/login","AuthenticationController@loginPage");
 $router->post("admin/do_login","AuthenticationController@doLogin");
 $router->get("admin/logout","AuthenticationController@logout");
 
+//user
+$router->get("admin/user","UserController@index");
+$router->get("admin/add-user","UserController@get_add_user");
+$router->get("admin/edit-user","UserController@get_edit_user");
+$router->post("admin/add-user-data","UserController@add_user_data");
+$router->post("admin/update-user","UserController@update_user");
+$router->get("admin/delete-user","UserController@delete_user");
+
 //category
 $router->get("admin/category","CategoryController@index");
 $router->get("admin/add-cate","CategoryController@get_add_cate");

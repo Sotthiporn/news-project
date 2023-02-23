@@ -11,6 +11,9 @@ class AuthenticationController {
     }
 
     public function doLogin(){
+        // if(password_verify($password, $hashed_password)) {
+        // }
+        
         session_start();
         $_SESSION["is_login"] = true;
         redirect('/admin/category');
