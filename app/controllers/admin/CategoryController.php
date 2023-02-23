@@ -13,14 +13,14 @@ class CategoryController {
         return view_admin('add-cate', ['cate_data' => $cate_data]);
     }
     public function add_cate_data(){
-        $query = "insert into tbl_category (name,od,status) values
-        (?,?,?)";
+        $query = "insert into tbl_category (name,color,od,status) values (?,?,?,?)";
 
         $insert = App::get('connection')->prepare($query);
 
         $input = $_POST;
         $insert->execute([
             $input['txt-name'],
+            $input['txt-color'],
             $input['txt-od'],
             $input['txt-status']
         ]);
@@ -42,15 +42,17 @@ class CategoryController {
         //update category data
         $id = $_GET['id'];
         $name = $_POST['name'];
+        $color = $_POST['color'];
         $od = $_POST['od'];
         $status = $_POST['status'];
 
-        $query = "update tbl_category set name = ?, od = ?,status = ? where id = ?";
+        $query = "update tbl_category set name = ?, color = ?, od = ?, status = ? where id = ?";
         
         $update = App::get('connection')->prepare($query);
         
         $update->execute([
            $name,
+           $color,
            $od,
            $status,
            $id

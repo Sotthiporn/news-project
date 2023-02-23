@@ -38,6 +38,7 @@ DROP TABLE IF EXISTS `tbl_category`;
 CREATE TABLE `tbl_category`  (
   `id` bigint(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `color` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `od` int(11) NULL DEFAULT 0,
   `status` tinyint(3) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE

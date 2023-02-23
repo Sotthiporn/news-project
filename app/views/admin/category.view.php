@@ -9,6 +9,7 @@
         <tr>
             <thead>
                 <td>Name</td>
+                <td>Color</td>
                 <td>Order</td>
                 <td>Status</td>
                 <td>Action</td>
@@ -20,6 +21,9 @@
         <tr>
             <tbody>
                 <td><?= $val->name ?></td>
+                <td>
+                    <div style="width: 40px; height: 40px;background-color: <?= $val->color ?>;"></div>
+                </td>
                 <td><?= $val->od ?></td>
                 <td><?= $val->status == 1 ? 'Enabled' : ($val->status == 2 ? 'Disabled' : '') ?></td>
                 <td>

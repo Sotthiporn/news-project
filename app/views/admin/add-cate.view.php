@@ -9,6 +9,10 @@
                 <input type="text" class="form-control" name="txt-name" id="txt-name" required>
             </div>
             <div class="form-group">
+                <label>Color *</label>
+                <input type="color" class="form-control" name="txt-color" id="txt-color" required>
+            </div>
+            <div class="form-group">
                 <label>Order *</label>
                 <input type="number" min="0" class="form-control" name="txt-od" id="txt-od" value="<?= isset($cate_data[0]->od) ? $cate_data[0]->od+1 : 0 ?>" required>
             </div>

@@ -86,7 +86,6 @@
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0" nonce="EWKN3QaE"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="<?= $BASE_URL ?>/public/style/bootstrap-4.5.0/js/bootstrap.min.js"></script>
-<script src="<?= $BASE_URL ?>/public/js/home-main.js"></script>
 <script>(function(d, s, id) {
 var js, fjs = d.getElementsByTagName(s)[0];
 if (d.getElementById(id)) return;

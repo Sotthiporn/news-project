@@ -11,6 +11,10 @@
                 <input type="text" class="form-control" name="txt-name" id="txt-name" value="<?= $cate_data[0]->name ?>" required>
             </div>
             <div class="form-group">
+                <label>Color *</label>
+                <input type="color" class="form-control" name="txt-color" id="txt-color" value="<?= $cate_data[0]->color ?>" required>
+            </div>
+            <div class="form-group">
                 <label>Order *</label>
                 <input type="number" min="0" class="form-control" name="txt-od" id="txt-od" value="<?= $cate_data[0]->od ?>" required>
             </div>
@@ -34,13 +38,19 @@ $(document).ready(function(){
     $('#btn-edit-cate').click(function(){
         var id = $('#txt-id').val();
         var name = $('#txt-name').val();
+        var color = $('#txt-color').val();
         var od = $('#txt-od').val();
         var status = $('#txt-status').val();
         
         $.ajax({
-            url: "<?= $BASE_URL ?>/admin/update-cate?id=" + <?php echo $cate_data[0]->id ?>,
+            url: "<?= $BASE_URL ?>/admin/update-cate?id=" + <?= $cate_data[0]->id ?>,
             type: "POST",
-            data: {name:name,od:od,status:status},
+            data: {
+                name: name,
+                color: color,
+                od: od,
+                status: status
+            },
             success:function(result){
                 var message = JSON.parse(result);
                 if(message.message == "updated_success"){
