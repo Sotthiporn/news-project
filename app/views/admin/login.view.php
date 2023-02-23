@@ -22,13 +22,19 @@ $BASE_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : 
                 <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="form-container">
                         <div class="form-icon">
-                            <img src="<?= $BASE_URL ?>/public/img/logo/news_logo.png"" alt="logo" style="width: 200px; height: 200px;">
+                            <img src="<?= $BASE_URL ?>/public/img/logo/news_logo.png"" alt=" logo" style="width: 200px; height: 200px;">
                         </div>
                         <form class="form-horizontal" action="<?= $BASE_URL ?>/admin/do_login" method="post">
                             <h3 class="title">Login to admin panel</h3>
+                            <?php
+                            if (isset($_SESSION['error_message_login'])) {
+                                echo '<div class="title alert alert-danger text-muted" role="alert" style="font-size: 12px;">' . $_SESSION['error_message_login'] . '</div>';
+                                unset($_SESSION['error_message_login']);
+                            }
+                            ?>
                             <div class="form-group">
                                 <span class="input-icon"><i class="fa fa-user"></i></span>
-                                <input class="form-control" type="text" placeholder="Username" id="txt-name" name="txt-name" required>
+                                <input class="form-control" type="text" placeholder="Username" id="txt-username" name="txt-username" required>
                             </div>
                             <div class="form-group">
                                 <span class="input-icon"><i class="fa fa-lock"></i></span>
