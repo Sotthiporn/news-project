@@ -1,5 +1,5 @@
 body {
-    font-family: 'Khmer OS System', cursive;
+    font-family: 'Kantumruy Pro', sans-serif;
 }
 
 a {
@@ -44,7 +44,7 @@ a {
 
 .top-menu ul li a {
     color: white !important;
-    font-family: 'Koulen', cursive;
+    font-family: 'Kantumruy Pro', sans-serif;
 }
 
 .top-menu ul li:hover a {

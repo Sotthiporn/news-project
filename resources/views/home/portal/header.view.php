@@ -21,6 +21,9 @@ $CURRENT_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
   <link rel="stylesheet" href="<?= $BASE_URL ?>/public/css/home-style.css">
   <link rel="stylesheet" href="<?= $BASE_URL ?>/public/css/news-list-style.css">
   <link rel="stylesheet" href="<?= $BASE_URL ?>/public/css/news-detail-style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -79,6 +82,9 @@ $CURRENT_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
         <?php
         }
         ?>
+        <li class="nav-item animation-menu">
+          <a class="nav-link" href="<?= $BASE_URL ?>/contact-us" style="color:<?= $category_color ?>!important;">Contact Us</a>
+        </li>
       </ul>
       <form action="<?= $BASE_URL ?>/search-news" method="get" class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="ស្វែងរក" aria-label="Search" name="search" value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>" required>

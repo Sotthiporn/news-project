@@ -13,11 +13,11 @@
 
     function view($name, $data = []){
         extract($data);  //extract = convert key of array to variable
-        return require "app/views/home/{$name}.view.php";
+        return require "resources/views/home/{$name}.view.php";
     }
     function view_admin($name, $data = []){
         extract($data);  //extract = convert key of array to variable
-        return require "app/views/admin/{$name}.view.php";
+        return require "resources/views/admin/{$name}.view.php";
     }
 
 ?>

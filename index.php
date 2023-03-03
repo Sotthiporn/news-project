@@ -6,6 +6,6 @@ $bootstrap = require('core/bootstrap.php');
 
 $router = new Router();
 
-$routes = require "app/routes.php";
+$route_list = require "routes/routes.php";
 
 $router->redirect(Request::url(), Request::rq_method());
