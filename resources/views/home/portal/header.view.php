@@ -1,6 +1,10 @@
 <?php
 $BASE_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
 $CURRENT_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+$homeController = new HomeController;
+$setting_data = $homeController->getSettingData();
+$ads_data = $homeController->adsHome();
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,8 +18,8 @@ $CURRENT_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>RUPP-News 24h</title>
-  <link rel="icon" href="<?= $BASE_URL ?>/public/img/logo/news_logo.png">
+  <title><?php echo $setting_data[0]->website_name ?? 'RUPP-News 24h' ?></title>
+  <link rel="icon" href="<?= $BASE_URL ?><?= !empty($setting_data[0]->website_logo) ? '/public/img/upload/setting/' . $setting_data[0]->website_logo : '/public/img/logo/news_logo.png' ?>">
   <link rel="stylesheet" href="<?= $BASE_URL ?>/public/style/font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="<?= $BASE_URL ?>/public/style/bootstrap-4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?= $BASE_URL ?>/public/css/home-style.css">
@@ -39,12 +43,10 @@ $CURRENT_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
   <div class="top-width">
     <div class="top-logo-width">
       <div class="logo col-lg-3 col-md-3 col-sm-3">
-        <a href="<?= $BASE_URL ?>/"> <img src="<?= $BASE_URL ?>/public/img/logo/news_logo.png"></a>
+        <a href="<?= $BASE_URL ?>/"> <img src="<?= $BASE_URL ?><?= !empty($setting_data[0]->website_logo) ? '/public/img/upload/setting/' . $setting_data[0]->website_logo : '/public/img/logo/news_logo.png' ?>"></a>
       </div>
       <div class="top-ads col-lg-12 col-md-9 col-sm-9">
         <?php
-        $homeController = new HomeController;
-        $ads_data = $homeController->adsHome();
         foreach ($ads_data as $key => $val) {
         ?>
           <a href="<?= $val->url ?>" target="_blank">
@@ -59,7 +61,7 @@ $CURRENT_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
 
   <!-- category   -->
   <nav class="navbar navbar-expand-lg navbar-light text-white" style="background-color: #3445b4;">
-    <a class="navbar-brand text-white" href="<?= $BASE_URL ?>/">RUPP-News 24h</a>
+    <a class="navbar-brand text-white" href="<?= $BASE_URL ?>/"><?php echo $setting_data[0]->website_name ?? 'RUPP-News 24h' ?></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -90,10 +92,10 @@ $CURRENT_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
         }
         ?>
         <li class="nav-item animation-menu">
-          <a class="nav-link" href="<?= $BASE_URL ?>/contact-us" style="color: white !important;">Contact Us</a>
+          <a class="nav-link" href="<?= $BASE_URL ?>/contact-us" style="color: white !important;">ទាក់ទងយើង</a>
         </li>
         <li class="nav-item animation-menu">
-          <a class="nav-link" href="<?= $BASE_URL ?>/about-us" style="color: white !important;">About Us</a>
+          <a class="nav-link" href="<?= $BASE_URL ?>/about-us" style="color: white !important;">អំពីយើង</a>
         </li>
       </ul>
       <form action="<?= $BASE_URL ?>/search-news" method="get" class="form-inline my-2 my-lg-0">

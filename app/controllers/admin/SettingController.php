@@ -2,11 +2,17 @@
 
 class SettingController
 {
+    //get setting data
+    public function getSettingData()
+    {
+        $setting = App::get('database')->getAll_tbl_limit('tbl_setting', 'id>0', 'id DESC', '1');
+        return $setting;
+    }
 
     public function setting()
     {
         //get advertise data into tbl
-        $setting_data = App::get('database')->getAll_tbl_limit('tbl_setting', 'id>0', 'id DESC', '1');
+        $setting_data = $this->getSettingData();
         return view_admin('setting', ['setting_data' => $setting_data]);
     }
     public function update_setting()
@@ -16,13 +22,14 @@ class SettingController
         $website_name = $_POST['website_name'];
         $website_phone = $_POST['website_phone'];
         $website_email = $_POST['website_email'];
+        $website_copyright = $_POST['website_copyright'];
         $website_address = $_POST['website_address'];
         $website_description = $_POST['website_description'];
         $website_logo = $_POST['website_logo'];
         if ($id == null) {
-            $query = "insert into tbl_setting (website_name,website_phone,website_email,website_address,website_description,website_logo) values (?,?,?,?,?,?)";
+            $query = "insert into tbl_setting (website_name,website_phone,website_email,website_copyright,website_address,website_description,website_logo) values (?,?,?,?,?,?)";
         } else {
-            $query = "update tbl_setting set website_name = ?, website_phone = ?, website_email = ?, website_address = ?,website_description = ?,website_logo = ? where id = $id";
+            $query = "update tbl_setting set website_name = ?, website_phone = ?, website_email = ?, website_copyright = ?, website_address = ?,website_description = ?,website_logo = ? where id = $id";
         }
 
         $update = App::get('connection')->prepare($query);
@@ -31,6 +38,7 @@ class SettingController
             $website_name,
             $website_phone,
             $website_email,
+            $website_copyright,
             $website_address,
             $website_description,
             $website_logo

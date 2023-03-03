@@ -5,6 +5,9 @@ if (!isset($_SESSION['is_login'])) {
 }
 
 $BASE_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
+
+$settingController = new SettingController;
+$setting_data = $settingController->getSettingData();
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,8 +16,8 @@ $BASE_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>RUPP News-Admin</title>
-	<link rel="icon" href="<?= $BASE_URL ?>/public/img/logo/news_logo.png">
+	<title><?php echo $setting_data[0]->website_name ?? 'RUPP-News 24h' ?> - Admin</title>
+	<link rel="icon" href="<?= $BASE_URL ?><?= !empty($setting_data[0]->website_logo) ? '/public/img/upload/setting/' . $setting_data[0]->website_logo : '/public/img/logo/news_logo.png' ?>">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300&display=swap" rel="stylesheet">
@@ -33,7 +36,7 @@ $BASE_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : 
 				</button>
 			</div>
 			<div class="p-4 menu">
-				<h1><a href="<?= $BASE_URL ?>/admin" class="logo">RUPP <span> News 24h - Admin</span></a></h1>
+				<h1><a href="<?= $BASE_URL ?>/admin" class="logo">Admin</a></h1>
 				<ul class="list-unstyled components mb-5">
 					<li>
 						<a href="<?= $BASE_URL ?>/admin/user"><span class="fa fa-user mr-3"></span> User</a>
@@ -67,7 +70,7 @@ $BASE_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : 
 							document.write(new Date().getFullYear());
 						</script> All rights reserved |
 						<i class="icon-heart" aria-hidden="true"></i>
-						<a href="<?= $BASE_URL ?>/" target="_blank" class="text-white">RUPP G23 E7 Team1</a>
+						<a href="<?= $BASE_URL ?>/" target="_blank" class="text-white"><?php echo $setting_data[0]->website_copyright ?? 'RUPP G23 E7 Team1' ?></a>
 					</p>
 				</div>
 

@@ -2,8 +2,8 @@
   <div class="container text-center text-md-left">
     <div class="row text-center text-md-left mt-3 pb-3">
       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">RUPP-News 24h</h6>
-       <p>Digital Design & IT institute in Cambodia.We provide professional skill in Creative Digital Design / Photography / Video Editing / IT and Programming Skill and News 24h.</p>
+        <h6 class="text-uppercase mb-4 font-weight-bold"><?php echo $setting_data[0]->website_name ?? 'RUPP-News 24h' ?></h6>
+       <p><?php echo $setting_data[0]->website_description ?? '' ?></p>
       </div>
       <hr class="w-100 clearfix d-md-none">
       <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
@@ -35,12 +35,12 @@
       <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
         <p>
-          <i class="fa fa-home mr-3"></i> Russian Federation Boulevard, Toul Kork, Phnom Penh, Cambodia
+          <i class="fa fa-home mr-3"></i> <?php echo $setting_data[0]->website_address ?? '' ?>
         </p>
         <p>
-          <i class="fa fa-envelope mr-3"></i> rupp.news24h@gmail.com</p>
+          <i class="fa fa-envelope mr-3"></i> <?php echo $setting_data[0]->website_email ?? '' ?></p>
         <p>
-          <i class="fa fa-phone mr-3"></i> +855 12 345 6789</p>
+          <i class="fa fa-phone mr-3"></i> <?php echo $setting_data[0]->website_phone ?? '' ?></p>
       </div>
     </div>
     <hr>
@@ -48,7 +48,7 @@
       <div class="col-md-7 col-lg-8">
         <p class="text-center text-md-left">© <?php echo date('Y') ?> Copyright:
           <a href="<?= $BASE_URL ?>/" class="text-white">
-            <strong> RUPP G23 E7 Team1</strong>
+            <strong> <?php echo $setting_data[0]->website_copyright ?? 'RUPP G23 E7 Team1' ?></strong>
           </a>
         </p>
 

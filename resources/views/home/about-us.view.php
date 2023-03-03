@@ -2,7 +2,7 @@
 
 <div class="container mt-5 text-center">
     <h2 class="mb-4">
-        <?php if(!empty($team_list)) echo 'Our Teams' ?>
+        <?php if(!empty($team_list)) echo 'ក្រុមរបស់យើង' ?>
     </h2>
     <div class="row">
         <?php

@@ -149,4 +149,11 @@ class HomeController
         //view
         return view('about-us', ['team_list' => $team_list]);
     }
+
+    //get setting data
+    public function getSettingData()
+    {
+        $setting = App::get('database')->getAll_tbl_limit('tbl_setting', 'id>0', 'id DESC', '1');
+        return $setting;
+    }
 }

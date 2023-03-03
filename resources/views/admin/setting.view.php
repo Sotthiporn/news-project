@@ -19,6 +19,10 @@ require 'portal/header.admin.view.php';
             <input type="email" class="form-control" name="txt-website-email" id="txt-website-email" value="<?= $setting_data[0]->website_email ?? null ?>" required>
         </div>
         <div class="form-group">
+            <label>Website Copyright *</label>
+            <input type="text" class="form-control" name="txt-website-copyright" id="txt-website-copyright" value="<?= $setting_data[0]->website_copyright ?? null ?>" required>
+        </div>
+        <div class="form-group">
             <label>Website Address *</label>
             <textarea class="form-control" name="txt-website-address" id="txt-website-address" required><?= $setting_data[0]->website_address ?? null ?></textarea>
         </div>
@@ -48,6 +52,7 @@ require 'portal/header.admin.view.php';
             var website_name = $('#txt-website-name').val();
             var website_phone = $('#txt-website-phone').val();
             var website_email = $('#txt-website-email').val();
+            var website_copyright = $('#txt-website-copyright').val();
             var website_address = $('#txt-website-address').val();
             var website_description = $('#txt-website-description').val();
             var website_logo = $('#txt-website-logo').val();
@@ -60,6 +65,7 @@ require 'portal/header.admin.view.php';
                     website_name: website_name,
                     website_phone: website_phone,
                     website_email: website_email,
+                    website_copyright: website_copyright,
                     website_address: website_address,
                     website_description: website_description,
                     website_logo: website_logo
