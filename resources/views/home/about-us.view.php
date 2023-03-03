@@ -38,9 +38,7 @@
                 <h5 class="mb-0">Eng HengLay</h5><span class="small text-uppercase text-muted">Member</span>
             </div>
         </div><!-- End -->
-    </div>
 
-    <div class="row">
         <!-- Team item -->
         <div class="col-xl-4 col-sm-6 mb-5">
             <div class="bg-white rounded shadow py-5 px-4">
@@ -77,9 +75,7 @@
                 <h5 class="mb-0">Pan Soketanak</h5><span class="small text-uppercase text-muted">Member</span>
             </div>
         </div><!-- End -->
-    </div>
-
-    <div class="row">
+        
         <!-- Team item -->
         <div class="col-xl-4 col-sm-6 mb-5">
             <div class="bg-white rounded shadow py-5 px-4">
