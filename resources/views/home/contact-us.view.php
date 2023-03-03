@@ -53,7 +53,7 @@
 										<span class="fa fa-map-marker"></span>
 									</div>
 									<div class="text pl-3">
-										<p><span>Address:</span> Russian Federation Boulevard, Toul Kork, Phnom Penh, Cambodia</p>
+										<p><span>Address:</span> <?php echo $setting_data[0]->website_address ?? '' ?></p>
 									</div>
 								</div>
 								<div class="dbox w-100 d-flex align-items-center">
@@ -61,7 +61,7 @@
 										<span class="fa fa-phone"></span>
 									</div>
 									<div class="text pl-3">
-										<p><span>Phone:</span> <a href="tel://1234567920">+855 12 345 6789</a></p>
+										<p><span>Phone:</span> <a href="tel://<?php echo $setting_data[0]->website_phone ?? '' ?>"><?php echo $setting_data[0]->website_phone ?? '' ?></a></p>
 									</div>
 								</div>
 								<div class="dbox w-100 d-flex align-items-center">
@@ -69,7 +69,7 @@
 										<span class="fa fa-paper-plane"></span>
 									</div>
 									<div class="text pl-3">
-										<p><span>Email:</span> <a href="mailto:rupp.news24h@gmail.com">rupp.news24h@gmail.com</a></p>
+										<p><span>Email:</span> <a href="mailto:<?php echo $setting_data[0]->website_email ?? '' ?>"><?php echo $setting_data[0]->website_email ?? '' ?></a></p>
 									</div>
 								</div>
 								<div class="dbox w-100 d-flex align-items-center">
