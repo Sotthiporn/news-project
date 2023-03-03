@@ -34,20 +34,6 @@ CREATE TABLE `tbl_user`  (
 INSERT INTO `tbl_user` (`id`, `fullname`, `username`, `password`, `status`) VALUES (1, 'News Admin', 'admin', '$2y$10$6tV6.fo13wTM/RVhDsN1kO8Um.QQQp9l4PfdzSC7GdJDkHSYcPHIy', 1);
 
 -- ----------------------------
--- Table structure for tbl_ads
--- ----------------------------
-DROP TABLE IF EXISTS `tbl_ads`;
-CREATE TABLE `tbl_ads`  (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `url` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `img` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `location` tinyint(3) UNSIGNED NOT NULL,
-  `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `status` tinyint(3) UNSIGNED NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
 -- Table structure for tbl_category
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_category`;
@@ -89,6 +75,33 @@ CREATE TABLE `tbl_slide`  (
   `od` int(11) NULL DEFAULT 0,
   `cate_id` bigint(20) UNSIGNED NOT NULL,
   `news_id` bigint(20) UNSIGNED NULL DEFAULT 0,
+  `status` tinyint(3) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Table structure for tbl_ads
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_ads`;
+CREATE TABLE `tbl_ads`  (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `url` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `location` tinyint(3) UNSIGNED NOT NULL,
+  `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `status` tinyint(3) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Table structure for tbl_team
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_team`;
+CREATE TABLE `tbl_team`  (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `od` int(11) NULL DEFAULT 0,
   `status` tinyint(3) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;

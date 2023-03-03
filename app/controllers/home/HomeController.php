@@ -74,7 +74,7 @@ class HomeController
             'tbl_slide.*,tbl_category.name as category_name,tbl_category.color as category_color',
             'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id',
             'tbl_slide.status=1',
-            'tbl_slide.id DESC LIMIT 0,1'
+            'tbl_slide.od DESC LIMIT 0,1'
         );
         return $slide_data;
     }
@@ -85,7 +85,7 @@ class HomeController
             'tbl_slide.*,tbl_category.name as category_name,tbl_category.color as category_color',
             'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id',
             'tbl_slide.status=1',
-            'tbl_slide.id DESC LIMIT 1,1'
+            'tbl_slide.od DESC LIMIT 1,1'
         );
         return $slide_data;
     }
@@ -96,7 +96,7 @@ class HomeController
             'tbl_slide.*,tbl_category.name as category_name,tbl_category.color as category_color',
             'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id',
             'tbl_slide.status=1',
-            'tbl_slide.id DESC LIMIT 2,1'
+            'tbl_slide.od DESC LIMIT 2,1'
         );
         return $slide_data;
     }
@@ -107,7 +107,7 @@ class HomeController
             'tbl_slide.*,tbl_category.name as category_name,tbl_category.color as category_color',
             'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id',
             'tbl_slide.status=1',
-            'tbl_slide.id DESC LIMIT 3,1'
+            'tbl_slide.od DESC LIMIT 3,1'
         );
         return $slide_data;
     }
@@ -145,7 +145,8 @@ class HomeController
     //get about_us
     public function about_us()
     {
+        $team_list = App::get('database')->getAll_tbl('tbl_team', 'status=1', 'od DESC');
         //view
-        return view('about-us');
+        return view('about-us', ['team_list' => $team_list]);
     }
 }

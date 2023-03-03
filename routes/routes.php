@@ -26,6 +26,15 @@ $router->post("admin/add-cate-data","CategoryController@add_cate_data");
 $router->post("admin/update-cate","CategoryController@update_cate");
 $router->get("admin/delete-cate","CategoryController@delete_cate");
 
+//news
+$router->get("admin/news","NewsController@news");
+$router->get("admin/add-news","NewsController@get_add_news");
+$router->get("admin/edit-news","NewsController@get_edit_news");
+$router->post("admin/add-news-data","NewsController@add_news_data");
+$router->post("admin/update-news","NewsController@update_news");
+$router->get("admin/delete-news","NewsController@delete_news");
+$router->post("admin/upl-img-news","NewsController@upl_img_news");
+
 //slide
 $router->get("admin/slide","SlideController@slide");
 $router->get("admin/add-slide","SlideController@get_add_slide");
@@ -44,14 +53,15 @@ $router->post("admin/update-ads","AdvertiseController@update_ads");
 $router->get("admin/delete-ads","AdvertiseController@delete_ads");
 $router->post("admin/upl-img-ads","AdvertiseController@upl_img_ads");
 
-//news
-$router->get("admin/news","NewsController@news");
-$router->get("admin/add-news","NewsController@get_add_news");
-$router->get("admin/edit-news","NewsController@get_edit_news");
-$router->post("admin/add-news-data","NewsController@add_news_data");
-$router->post("admin/update-news","NewsController@update_news");
-$router->get("admin/delete-news","NewsController@delete_news");
-$router->post("admin/upl-img-news","NewsController@upl_img_news");
+
+//team
+$router->get("admin/team","TeamController@team");
+$router->get("admin/add-team","TeamController@get_add_team");
+$router->get("admin/edit-team","TeamController@get_edit_team");
+$router->post("admin/add-team-data","TeamController@add_team_data");
+$router->post("admin/update-team","TeamController@update_team");
+$router->get("admin/delete-team","TeamController@delete_team");
+$router->post("admin/upl-img-team","TeamController@upl_img_team");
 
 
 /**
