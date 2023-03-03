@@ -61,7 +61,7 @@ class NewsController
     public function update_news()
     {
         //update news data
-        $id = $_POST['id'];
+        $id = $_GET['id'];
 
         $query = "update tbl_news set title = ?, name_link = ?, des = ?, img = ?, od = ?, location = ?, cate_id = ?,status = ? where id = ?";
 
