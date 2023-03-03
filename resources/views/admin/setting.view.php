@@ -33,7 +33,6 @@ require 'portal/header.admin.view.php';
         </div>
         <div style="float: right;">
             <button type="button" class="btn btn-primary" id="btn-edit-setting">Update</button>
-            <a href="<?= $BASE_URL ?>/admin/setting"><button type="button" class="btn btn-danger">Cancel</button></a>
         </div>
     </form>
 </div>
