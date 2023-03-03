@@ -6,7 +6,7 @@ $cate = $categoryController->get_cate_on_form();
 
 <div id="content" class="p-4 p-md-5 pt-5">
     <h1>Edit News</h1>
-    <form action="<?= $BASE_URL ?>/admin/update-news?id=<?= $news_data[0]->id ?>" method="post" class="upl">
+    <form method="post" class="upl">
         <input type="text" class="form-control" name="txt-id" id="txt-id" value="<?= $news_data[0]->id ?>" hidden>
         <div class="form-group">
             <label>Category *</label>
@@ -53,7 +53,7 @@ $cate = $categoryController->get_cate_on_form();
             <input type="hidden" name="txt-photo" id="txt-photo" value="<?= $news_data[0]->img ?>" required>
         </div>
         <div style="float: right;">
-            <button type="submit" class="btn btn-primary btn-edit-news">Update</button>
+            <button type="button" class="btn btn-primary" id="btn-edit-news">Update</button>
             <a href="<?= $BASE_URL ?>/admin/news"><button type="button" class="btn btn-danger">Cancel</button></a>
         </div>
     </form>
@@ -131,6 +131,44 @@ $cate = $categoryController->get_cate_on_form();
                 toolbar2: "fontselect | fontsizeselect | forecolor media code",
             });
         }
+
+        $('#btn-edit-news').click(function() {
+            var id = $('#txt-id').val();
+            var title = $('#txt-title').val();
+            var des = $('#txt-des').val();
+            var od = $('#txt-od').val();
+            var location = $('#txt-location').val();
+            var cate = $('#txt-cate').val();
+            var status = $('#txt-status').val();
+            var photo = $('#txt-photo').val();
+
+            $.ajax({
+                url: "<?= $BASE_URL ?>/admin/update-news?id=" + <?= $news_data[0]->id ?>,
+                type: "POST",
+                data: {
+                    id: id,
+                    title: title,
+                    des: des,
+                    od: od,
+                    location: location,
+                    cate: cate,
+                    status: status,
+                    photo: photo
+                },
+                success: function(result) {
+                    var message = JSON.parse(result);
+                    if (message.message == "updated_success") {
+                        alert("Your data has been updated!");
+                        window.location.href = "<?= $BASE_URL ?>/admin/news";
+                    } else {
+                        alert("somthing went wrong please try again later!");
+                    }
+                },
+                error: function() {
+                    alert("somthing went wrong please try again later!");
+                }
+            });
+        });
 
     });
 </script>

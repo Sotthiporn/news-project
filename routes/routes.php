@@ -63,6 +63,9 @@ $router->post("admin/update-team","TeamController@update_team");
 $router->get("admin/delete-team","TeamController@delete_team");
 $router->post("admin/upl-img-team","TeamController@upl_img_team");
 
+//setting
+$router->get("admin/setting","SettingController@setting");
+
 
 /**
  * Home Block

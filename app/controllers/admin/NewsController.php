@@ -61,29 +61,29 @@ class NewsController
     public function update_news()
     {
         //update news data
-        $id = $_GET['id'];
+        $id = $_POST['id'];
 
         $query = "update tbl_news set title = ?, name_link = ?, des = ?, img = ?, od = ?, location = ?, cate_id = ?,status = ? where id = ?";
 
         $update = App::get('connection')->prepare($query);
 
         $input = $_POST;
-        $des = trim($input['txt-des']);
-        $name_link = $input['txt-title'];
+        $des = trim($input['des']);
+        $name_link = $input['title'];
         $connect_string = Utils::characterConcatDash($name_link);
 
         $update->execute([
-            $input['txt-title'],
+            $input['title'],
             $connect_string,
             $des,
-            $input['txt-photo'],
-            $input['txt-od'],
-            $input['txt-location'],
-            $input['txt-cate'],
-            $input['txt-status'],
+            $input['photo'],
+            $input['od'],
+            $input['location'],
+            $input['cate'],
+            $input['status'],
             $id
         ]);
-        return redirect('/admin/news');
+        echo json_encode(['message' => 'updated_success']);
     }
     public function delete_news()
     {

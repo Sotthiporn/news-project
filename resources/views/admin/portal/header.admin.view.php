@@ -54,6 +54,9 @@ $BASE_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : 
 						<a href="<?= $BASE_URL ?>/admin/team"><span class="fa fa-users mr-3"></span> Team</a>
 					</li>
 					<li>
+						<a href="<?= $BASE_URL ?>/admin/team"><span class="fa fa-cog mr-3"></span> Setting</a>
+					</li>
+					<li>
 						<a href="<?= $BASE_URL ?>/admin/logout"><span class="fa fa-sign-out mr-3"></span> Logout</a>
 					</li>
 				</ul>
