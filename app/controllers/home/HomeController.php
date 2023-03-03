@@ -71,9 +71,9 @@ class HomeController
     {
         //get slide data into HomePage
         $slide_data = App::get('database')->getAll_tbl_multi(
-            'tbl_slide.*,tbl_category.name as category_name,tbl_category.color as category_color', 
-            'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id', 
-            'tbl_slide.status=1', 
+            'tbl_slide.*,tbl_category.name as category_name,tbl_category.color as category_color',
+            'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id',
+            'tbl_slide.status=1',
             'tbl_slide.id DESC LIMIT 0,1'
         );
         return $slide_data;
@@ -82,9 +82,9 @@ class HomeController
     {
         //get slide data into HomePage
         $slide_data = App::get('database')->getAll_tbl_multi(
-            'tbl_slide.*,tbl_category.name as category_name,tbl_category.color as category_color', 
-            'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id', 
-            'tbl_slide.status=1', 
+            'tbl_slide.*,tbl_category.name as category_name,tbl_category.color as category_color',
+            'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id',
+            'tbl_slide.status=1',
             'tbl_slide.id DESC LIMIT 1,1'
         );
         return $slide_data;
@@ -93,9 +93,9 @@ class HomeController
     {
         //get slide data into HomePage
         $slide_data = App::get('database')->getAll_tbl_multi(
-            'tbl_slide.*,tbl_category.name as category_name,tbl_category.color as category_color', 
-            'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id', 
-            'tbl_slide.status=1', 
+            'tbl_slide.*,tbl_category.name as category_name,tbl_category.color as category_color',
+            'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id',
+            'tbl_slide.status=1',
             'tbl_slide.id DESC LIMIT 2,1'
         );
         return $slide_data;
@@ -104,9 +104,9 @@ class HomeController
     {
         //get slide data into HomePage
         $slide_data = App::get('database')->getAll_tbl_multi(
-            'tbl_slide.*,tbl_category.name as category_name,tbl_category.color as category_color', 
-            'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id', 
-            'tbl_slide.status=1', 
+            'tbl_slide.*,tbl_category.name as category_name,tbl_category.color as category_color',
+            'tbl_slide INNER JOIN tbl_category ON tbl_slide.cate_id = tbl_category.id',
+            'tbl_slide.status=1',
             'tbl_slide.id DESC LIMIT 3,1'
         );
         return $slide_data;
@@ -125,7 +125,7 @@ class HomeController
             );
             return view('search', ['search' => $search]);
         } else {
-           redirect('/');
+            redirect('/');
         }
     }
 
@@ -133,5 +133,19 @@ class HomeController
     public function get_post_date($time, $date)
     {
         return Utils::getKhmerDateFormat($time, $date);
+    }
+
+    //get contact_us
+    public function contact_us()
+    {
+        //view
+        return view('contact-us');
+    }
+
+    //get about_us
+    public function about_us()
+    {
+        //view
+        return view('about-us');
     }
 }

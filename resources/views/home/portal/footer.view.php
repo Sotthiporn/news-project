@@ -35,7 +35,7 @@
       <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
         <p>
-          <i class="fa fa-home mr-3"></i> #72, Str 566, Toul kork Commune Phnom Penh 00855
+          <i class="fa fa-home mr-3"></i> Russian Federation Boulevard, Toul Kork, Phnom Penh, Cambodia
         </p>
         <p>
           <i class="fa fa-envelope mr-3"></i> rupp.news24h@gmail.com</p>

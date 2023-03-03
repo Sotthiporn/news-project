@@ -19,6 +19,13 @@ $CURRENT_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
   <link rel="stylesheet" href="<?= $BASE_URL ?>/public/style/font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="<?= $BASE_URL ?>/public/style/bootstrap-4.5.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?= $BASE_URL ?>/public/css/home-style.css">
+
+  <?php
+  if (strpos($CURRENT_URL, 'contact-us') !== false) {
+    echo '<link rel="stylesheet" href="' . $BASE_URL . '/public/css/contact-us-style.css">';
+  }
+
+  ?>
   <link rel="stylesheet" href="<?= $BASE_URL ?>/public/css/news-list-style.css">
   <link rel="stylesheet" href="<?= $BASE_URL ?>/public/css/news-detail-style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,6 +91,9 @@ $CURRENT_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
         ?>
         <li class="nav-item animation-menu">
           <a class="nav-link" href="<?= $BASE_URL ?>/contact-us" style="color:<?= $category_color ?>!important;">Contact Us</a>
+        </li>
+        <li class="nav-item animation-menu">
+          <a class="nav-link" href="<?= $BASE_URL ?>/about-us" style="color:<?= $category_color ?>!important;">About Us</a>
         </li>
       </ul>
       <form action="<?= $BASE_URL ?>/search-news" method="get" class="form-inline my-2 my-lg-0">

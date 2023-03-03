@@ -61,4 +61,6 @@ $router->get("","HomeController@index");
 $router->get("news-list","HomeController@news_list");
 $router->get("news-detail","HomeController@news_detail");
 $router->get("search-news","HomeController@search_news");
+$router->get("contact-us","HomeController@contact_us");
+$router->get("about-us","HomeController@about_us");
 
