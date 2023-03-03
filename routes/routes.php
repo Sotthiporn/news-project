@@ -65,6 +65,7 @@ $router->post("admin/upl-img-team","TeamController@upl_img_team");
 
 //setting
 $router->get("admin/setting","SettingController@setting");
+$router->post("admin/update-setting","SettingController@update_setting");
 
 
 /**

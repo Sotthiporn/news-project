@@ -106,4 +106,19 @@ CREATE TABLE `tbl_team`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
+-- ----------------------------
+-- Table structure for tbl_setting
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_setting`;
+CREATE TABLE `tbl_setting`  (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `website_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `website_logo` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `website_phone` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `website_email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `website_address` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `website_description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+
 SET FOREIGN_KEY_CHECKS = 1;

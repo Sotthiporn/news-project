@@ -90,10 +90,10 @@ $CURRENT_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
         }
         ?>
         <li class="nav-item animation-menu">
-          <a class="nav-link" href="<?= $BASE_URL ?>/contact-us" style="color:<?= $category_color ?>!important;">Contact Us</a>
+          <a class="nav-link" href="<?= $BASE_URL ?>/contact-us" style="color: white !important;">Contact Us</a>
         </li>
         <li class="nav-item animation-menu">
-          <a class="nav-link" href="<?= $BASE_URL ?>/about-us" style="color:<?= $category_color ?>!important;">About Us</a>
+          <a class="nav-link" href="<?= $BASE_URL ?>/about-us" style="color: white !important;">About Us</a>
         </li>
       </ul>
       <form action="<?= $BASE_URL ?>/search-news" method="get" class="form-inline my-2 my-lg-0">
