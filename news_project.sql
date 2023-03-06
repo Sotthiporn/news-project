@@ -85,7 +85,7 @@ CREATE TABLE `tbl_slide`  (
 DROP TABLE IF EXISTS `tbl_ads`;
 CREATE TABLE `tbl_ads`  (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `url` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `url` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `img` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `location` tinyint(3) UNSIGNED NOT NULL,
   `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,

@@ -26,7 +26,7 @@ require 'portal/header.admin.view.php';
             </select>
         </div>
         <div class="form-group">
-            <label>Status(1=Enable,2=Disable) *</label>
+            <label>Status *</label>
             <select class="form-control" name="txt-status" id="txt-status" required>
                 <option value="1" <?= $ads_data[0]->status == 1 ? 'selected' : '' ?>>Enable</option>
                 <option value="2" <?= $ads_data[0]->status == 2 ? 'selected' : '' ?>>Disable</option>

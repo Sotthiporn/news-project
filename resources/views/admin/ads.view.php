@@ -22,10 +22,16 @@
             <tr>
                 <tbody>
                     <td>
-                        <a href="<?= $val->url ?>" target="_blank"><?= $val->url ?></a>
+                        <?php
+                        if ($val->type == 'Video') {
+                            echo $val->url;
+                        } else {
+                            echo '<a href="' . $val->url . '" target="_blank">' . $val->url . '</a>';
+                        }
+                        ?>
                     </td>
                     <td>
-                        <img src="<?= $BASE_URL ?>/public/img/upload/ads/<?= $val->img ?>" alt="<?= $val->img ?>" onerror="this.src='/public/img/default/bg_gallery.png'" width="60" height="60" style="margin-top: -12px;">
+                        <img src="<?= $BASE_URL ?>/public/img/upload/ads/<?= $val->img ?>" alt="<?= $val->img ?>" onerror="this.src='<?= $BASE_URL ?>/public/img/default/bg_gallery.png'" width="60" height="60" style="margin-top: -12px;">
                     </td>
                     <td><?= $val->location == 1 ? 'Header Menu' : ($val->location == 2 ? 'Slide Right' : ($val->location == 3 ? 'News Detail' : '')) ?></td>
                     <td><?= $val->type ?></td>
