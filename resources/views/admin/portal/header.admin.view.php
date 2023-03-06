@@ -45,10 +45,10 @@ $setting_data = $settingController->getSettingData();
 						<a href="<?= $BASE_URL ?>/admin/category"><span class="fa fa-bars mr-3"></span> Category</a>
 					</li>
 					<li>
-						<a href="<?= $BASE_URL ?>/admin/news"><span class="fa fa-newspaper-o mr-3"></span> News</a>
+						<a href="<?= $BASE_URL ?>/admin/slide"><span class="fa fa-window-restore mr-3"></span> Slide</a>
 					</li>
 					<li>
-						<a href="<?= $BASE_URL ?>/admin/slide"><span class="fa fa-window-restore mr-3"></span> Slide</a>
+						<a href="<?= $BASE_URL ?>/admin/news"><span class="fa fa-newspaper-o mr-3"></span> News</a>
 					</li>
 					<li>
 						<a href="<?= $BASE_URL ?>/admin/ads"><span class="fa fa-bar-chart mr-3"></span> Advertise</a>
