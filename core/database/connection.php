@@ -7,7 +7,8 @@
                 $pdo = new PDO(
                     "mysql:host=".$con['host'].";dbname=".$con['db_name'], 
                     $con['username'],
-                    $con['password']
+                    $con['password'],
+                    [PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"]
                 );
 
             } catch (Exception $e) {

@@ -25,7 +25,7 @@
         <a href="<?= empty($val->news_id) ? 'javascript:;' : $BASE_URL . '/news-detail?id=' .$val->news_id ?>">
           <img onerror="this.src='<?= $BASE_URL ?>/public/img/default/no_image_found.png'" src="<?= $BASE_URL ?>/public/img/upload/slide/<?= $val->img ?>">
           <a href="<?= empty($val->cate_id) ? 'javascript:;' : $BASE_URL . '/news-list?cate=' .$val->cate_id ?>">
-            <div class="text-cate-slide> style="background-color: <?= $val->category_color ?>;""><?= $val->category_name ?></div>
+            <div class="text-cate-slide" style="background-color: <?= $val->category_color ?>;"><?= $val->category_name ?></div>
           </a>
           <div class="title-slide"><?= $val->title ?></div>
         </a>
