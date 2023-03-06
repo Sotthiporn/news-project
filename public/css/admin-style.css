@@ -2258,10 +2258,6 @@ select.form-control[multiple] {
     height: auto;
 }
 
-textarea.form-control {
-    height: auto;
-}
-
 .form-group {
     margin-bottom: 1rem;
 }
@@ -11193,7 +11189,7 @@ a[data-toggle="collapse"] {
 }
 
 .form-control {
-    height: 40px !important;
+    height: 40px;
     background: #fff;
     color: #000;
     font-size: 16px;
