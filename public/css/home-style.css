@@ -1,5 +1,6 @@
 body {
     font-family: 'Kantumruy Pro', sans-serif;
+    font-size: 18px;
 }
 
 a {
@@ -45,6 +46,7 @@ a {
 .top-menu ul li a {
     color: white !important;
     font-family: 'Kantumruy Pro', sans-serif;
+    font-size: 20px;
 }
 
 .top-menu ul li:hover a {
@@ -136,7 +138,7 @@ a {
     background-color: dodgerblue;
     color: white;
     padding: 5px;
-    width: 112px;
+    width: 120px;
     -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0);
     clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 100%, 75% 0);
 }

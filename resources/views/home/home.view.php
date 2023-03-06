@@ -85,7 +85,7 @@
     foreach ($cate as $key => $cates) {
     ?>
       <div class="col-xl-12 col-lg-12">
-        <div class="text-cate-slide" style="margin-top:20px; background-color: <?= $cates->color ?>;"><a href="<?= $BASE_URL ?>/news-list?cate=<?= $cates->id ?>">&nbsp&nbsp&nbsp<?= $cates->name ?></a></div>
+        <div class="text-cate-slide" style="margin-top: 16px; background-color: <?= $cates->color ?>;"><a href="<?= $BASE_URL ?>/news-list?cate=<?= $cates->id ?>">&nbsp&nbsp&nbsp<?= $cates->name ?></a></div>
         <div class="home-ct-title"></div>
       </div>
       <?php

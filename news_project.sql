@@ -28,7 +28,7 @@ CREATE TABLE `tbl_user`  (
   `password` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `status` tinyint(3) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci;
 
 -- Password: 12345678
 INSERT INTO `tbl_user` (`id`, `fullname`, `username`, `password`, `status`) VALUES (1, 'News Admin', 'admin', '$2y$10$6tV6.fo13wTM/RVhDsN1kO8Um.QQQp9l4PfdzSC7GdJDkHSYcPHIy', 1);
@@ -44,7 +44,7 @@ CREATE TABLE `tbl_category`  (
   `od` int(11) NULL DEFAULT 0,
   `status` tinyint(3) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci;
 
 -- ----------------------------
 -- Table structure for tbl_news
@@ -62,7 +62,7 @@ CREATE TABLE `tbl_news`  (
   `cate_id` bigint(20) UNSIGNED NOT NULL,
   `status` tinyint(3) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci;
 
 -- ----------------------------
 -- Table structure for tbl_slide
@@ -77,7 +77,7 @@ CREATE TABLE `tbl_slide`  (
   `news_id` bigint(20) UNSIGNED NULL DEFAULT 0,
   `status` tinyint(3) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci;
 
 -- ----------------------------
 -- Table structure for tbl_ads
@@ -91,7 +91,7 @@ CREATE TABLE `tbl_ads`  (
   `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `status` tinyint(3) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci;
 
 -- ----------------------------
 -- Table structure for tbl_team
@@ -104,7 +104,7 @@ CREATE TABLE `tbl_team`  (
   `od` int(11) NULL DEFAULT 0,
   `status` tinyint(3) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci;
 
 -- ----------------------------
 -- Table structure for tbl_setting
@@ -120,6 +120,6 @@ CREATE TABLE `tbl_setting`  (
   `website_address` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `website_description` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci;
 
 SET FOREIGN_KEY_CHECKS = 1;
