@@ -45,7 +45,7 @@ $ads_data = $homeController->adsHome();
       <div class="logo col-lg-3 col-md-3 col-sm-3">
         <a href="<?= $BASE_URL ?>/"> <img src="<?= $BASE_URL ?><?= !empty($setting_data[0]->website_logo) ? '/public/img/upload/setting/' . $setting_data[0]->website_logo : '/public/img/logo/news_logo.png' ?>"></a>
       </div>
-      <div class="top-ads col-lg-12 col-md-9 col-sm-9">
+      <div class="top-ads col-xl-12  col-lg-9 col-md-6 col-sm-3 text-right">
         <?php
         foreach ($ads_data as $key => $val) {
         ?>

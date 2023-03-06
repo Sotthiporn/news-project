@@ -32,7 +32,7 @@
         </p>
       </div>
       <hr class="w-100 clearfix d-md-none">
-      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+      <div class="col-md-5 col-lg-4 col-xl-4 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
         <p>
           <i class="fa fa-map-marker mr-3"></i> <?php echo $setting_data[0]->website_address ?? '' ?>

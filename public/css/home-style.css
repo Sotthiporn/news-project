@@ -31,7 +31,8 @@ a {
 }
 
 .top-ads {
-    width: 1000;
+    /* width: 1000px; */
+    width: auto;
 }
 
 .top-ads img {
@@ -69,6 +70,7 @@ a {
 
 .container-news {
     width: 1200px;
+    /* width: auto; */
     margin: auto;
     overflow: hidden;
 }

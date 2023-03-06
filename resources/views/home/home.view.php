@@ -84,7 +84,7 @@
     <?php
     foreach ($cate as $key => $cates) {
     ?>
-      <div class="col-xl-12 col-lg-12">
+      <div class="col-xl-12">
         <div class="text-cate-slide" style="margin-top: 16px; background-color: <?= $cates->color ?>;"><a href="<?= $BASE_URL ?>/news-list?cate=<?= $cates->id ?>">&nbsp&nbsp&nbsp<?= $cates->name ?></a></div>
         <div class="home-ct-title"></div>
       </div>
@@ -93,7 +93,7 @@
       $news_home = $homeController->news_home($cate_id);
       foreach ($news_home as $key => $val) {
       ?>
-        <div class="col-xl-4 box-item">
+        <div class="col-12 col-lg-6 col-xl-4 box-item">
           <a href="<?= $BASE_URL ?>/news-detail?id=<?= $val->id ?>">
             <div class="img-box" style="background-image: url(<?= $BASE_URL ?>/public/img/upload/news/<?= $val->img  ?>)"></div>
           </a>
