@@ -46,7 +46,7 @@
 							</div>
 						</div>
 						<div class="col-md-5 d-flex align-items-stretch">
-							<div class="info-wrap bg-primary w-100 p-lg-5 p-4">
+							<div class="info-wrap bg-primary w-100 p-4">
 								<h3 class="mb-4 mt-md-4">Contact us</h3>
 								<div class="dbox w-100 d-flex align-items-start">
 									<div class="icon d-flex align-items-center justify-content-center">
