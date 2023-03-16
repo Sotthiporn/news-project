@@ -1,17 +1,24 @@
 - Run for first time
-
 1/. Need Wamp Server, Xampp server or another web server
 2/. Open web server one of above
-3/. Execute Database on database tools like phpmyadmin, Navicat, MySQL Workbench or another tools
-4/. Copy config.php.example and rename to config.php
-5/. Config database name and password in file config.php
+3/. Copy config.php.example and rename to config.php
+4/. Config database name and password in file config.php
+5/. Execute database file ``news_project_tables.sql`` on database tools like phpmyadmin, Navicat, MySQL Workbench or another tools
 6/. Download and install composer first
-7/. Write ``composer dump-autoload``` in commandline for map all class to be link together in this project
-8/. Write ``php -S localhost:800`` in commandline for run this project
+7/. Write ``composer dump-autoload`` in command line for map all class to be link together in this project
+8/. Write ``php -S localhost:2023`` in command line for run this project
 
 
 
 - Run for not first time
-
 1/. Open web server
-2/. Write ``php -S localhost:800`` in commandline for run this project
+2/. Write ``php -S localhost:2023`` in command line for run this project
+
+
+
+
+- Note
+** If you want to have some default data in database with image just follow below step
+1/. Unzip file ``backup_data.zip``
+2/. Copy ``upload`` folder to ``public/img``
+3/. Execute database file ``news_project_data.sql``
