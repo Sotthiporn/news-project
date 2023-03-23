@@ -7,12 +7,14 @@
 6/. Download and install composer first
 7/. Write ``composer dump-autoload`` in command line for map all class to be link together in this project
 8/. Write ``php -S localhost:2023`` in command line for run this project
+9/. Dont forget to connect the internet
 
 
 
 - Run for not first time
 1/. Open web server
 2/. Write ``php -S localhost:2023`` in command line for run this project
+3/. Dont forget to connect the internet
 
 
 
